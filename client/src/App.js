@@ -5,6 +5,7 @@ import Products from "../src/components/Products";
 import Contact from "../src/components/Contact";
 import About from "../src/components/About";
 import NoPage from "../src/components/NoPage";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <BrowserRouter>
