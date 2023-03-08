@@ -1,17 +1,22 @@
-.brand-text {
-  margin-left: 4rem;
-  margin-top: -3.2rem;
-  font-weight: 700;
+.ff
+{
+  font-family: 'Barlow', sans-serif;
+  font-size: 120%;
 }
-.nav-link {
-  margin: 20px;
-  text-align: center;
-  border: 2px solid transparent;
-  border-radius: 1rem;
+.me-auto{
+  font-size: 140%!important;
+
 }
-.nav-link:hover,
-.nav-link:focus {
-  background-color: #fefefe;
-  color: #451717 !important;
-  border-radius: 1rem;
-}
+
+@media (min-width: 768px) {
+  .navbar-brand.abs
+      {
+          position: absolute;
+          width: auto;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+      }
+  }
+  
+

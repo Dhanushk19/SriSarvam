@@ -1,34 +1,41 @@
-import { Container, Navbar, Nav } from "react-bootstrap";
+
 import "../css/Navbar1.css";
-import logo from "../assets/logo1.jpg";
+
 function Header() {
   return (
-    <Navbar className="navbar" bg="none" expand="lg" variant="secondary">
-      <Container className="navbar-container">
-        <Navbar.Brand href="/">
-          <img
-            alt="Srisarvam"
-            src={logo}
-            width="150"
-            height="50"
-            className="d-inline-block align-top brand-logo"
-          />
-        </Navbar.Brand>
-
-        <Navbar.Toggle />
-        <Navbar.Collapse collapseOnSelect>
-          <Nav
-            className="me-auto nav-links justify-content-end"
-            style={{ width: "100%" }}
-          >
-            <Nav.Link href="/" className="nav-link">Home</Nav.Link>
-            <Nav.Link href="/products" className="nav-link">Products</Nav.Link>
-            <Nav.Link href="/about" className="nav-link">About</Nav.Link>
-            <Nav.Link href="/contact" className="nav-link">Contact</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center ff">
+    <div class="container">
+        <a href="/" class="navbar-brand d-flex w-50 me-auto">Sri Sarvam Oils</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+            <ul class="navbar-nav w-100 justify-content-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">About</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/SignUp">SignUp</a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</nav>
   );
 }
 
