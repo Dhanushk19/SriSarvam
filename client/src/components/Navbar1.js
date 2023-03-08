@@ -1,8 +1,10 @@
 
+import { Outlet } from "react-router-dom";
 import "../css/Navbar1.css";
 
 function Header() {
   return (
+    <>
     <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center ff">
     <div class="container">
         <a href="/" class="navbar-brand d-flex w-50 me-auto">Sri Sarvam Oils</a>
@@ -21,7 +23,7 @@ function Header() {
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
@@ -36,6 +38,8 @@ function Header() {
         </div>
     </div>
 </nav>
+<Outlet/>
+</>
   );
 }
 
