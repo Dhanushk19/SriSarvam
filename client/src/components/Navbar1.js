@@ -1,46 +1,108 @@
-
-import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import { Outlet,NavLink } from "react-router-dom";
 import "../css/Navbar1.css";
-
+import logo1 from "../assets/logo1b.png";
 function Header() {
-  return (
-    <>
-    <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center ff">
-    <div class="container">
-        <a href="/" class="navbar-brand d-flex w-50 me-auto">Sri Sarvam Oils</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-            <ul class="navbar-nav w-100 justify-content-center">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/products">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/SignUp">SignUp</a>
-                </li>
-               
-            </ul>
-        </div>
-    </div>
-</nav>
-<Outlet/>
-</>
-  );
+    const [shake, setShake] = useState(false);
+    
+    const animate = () => {
+        
+        // Button begins to shake
+        setShake(true);
+        
+        // Buttons stops to shake after 2 seconds
+        setTimeout(() => setShake(false), 2000);
+        
+    }
+
+    return (
+        <>
+            <header>
+
+                <div class="container-fluid">
+
+                    <div class="navb-logo">
+                        <img src={logo1} alt="Logo" />
+                    </div>
+
+                    <div class="navb-items d-none d-xl-flex">
+
+                        <div class="item">
+                            <NavLink to="/"  >Home</NavLink>
+                        </div>
+
+                        <div class="item">
+                            <NavLink to="/products"  >Products</NavLink>
+                        </div>
+
+                        <div class="item">
+                            <NavLink to="/contact" >Contact</NavLink>
+                        </div>
+
+                        <div class="item">
+                            <NavLink to="/about" >About</NavLink>
+                        </div>
+
+                        <div class="item-button">
+                            <a href="/login" type="button" onClick = {animate} className = {shake ? `shake` : null}>Login</a>
+                        </div>
+                    </div>
+
+
+                    <div class="mobile-toggler d-lg-none">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
+                        <i class="fa fa-solid fa-bars fontbars"></i>
+                        </a>
+                    </div>
+
+
+                    <div class="modal fade" id="navbModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <img src={logo1} alt="Logo" />
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-xmark"></i></button>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <div class="modal-line">
+                                    <i class="fa fa-home" aria-hidden="true"></i><a href="/">Home</a>
+                                    </div>
+
+                                    <div class="modal-line">
+                                    <i class="fa-solid fa-droplet"></i> <a href="/products">Products</a>
+                                    </div>
+
+                                    <div class="modal-line">
+                                    <i class="fa-solid fa-phone"></i> <a href="/contact">Contact</a>
+                                    </div>
+
+                                    <div class="modal-line">
+                                    <i class="fa-solid fa-circle-info"></i> <a href="/about">About</a>
+                                    </div>
+
+                                    <a href="/contact" class="navb-button" type="button">Login</a>
+                                </div>
+
+                                <div class="mobile-modal-footer">
+
+                                    <a target="_blank" href="#"><i class="fa fa-brands fa-instagram"></i></a>
+                                    <a target="_blank" href="#"><i class="fa fa-brands fa-linkedin-in"></i></a>
+                                    <a target="_blank" href="#"><i class="fa fa-brands fa-youtube"></i></a>
+                                    <a target="_blank" href="#"><i class="fa fa-brands fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+            <Outlet />
+        </>
+    );
 }
 
 export default Header;
