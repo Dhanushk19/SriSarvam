@@ -1,19 +1,9 @@
-import { useState } from "react";
+
 import { Outlet,NavLink } from "react-router-dom";
 import "../css/Navbar1.css";
 import logo1 from "../assets/logo1b.png";
 function Header() {
-    const [shake, setShake] = useState(false);
     
-    const animate = () => {
-        
-        // Button begins to shake
-        setShake(true);
-        
-        // Buttons stops to shake after 2 seconds
-        setTimeout(() => setShake(false), 2000);
-        
-    }
 
     return (
         <>
@@ -44,7 +34,7 @@ function Header() {
                         </div>
 
                         <div class="item-button">
-                            <a href="/login" type="button" onClick = {animate} className = {shake ? `shake` : null}>Login</a>
+                            <a href="/login" type="button" >Login</a>
                         </div>
                     </div>
 
@@ -84,7 +74,7 @@ function Header() {
                                     <i class="fa-solid fa-circle-info"></i> <a href="/about">About</a>
                                     </div>
 
-                                    <a href="/contact" class="navb-button" type="button">Login</a>
+                                    <a href="/login" class="navb-button" type="button">Login</a>
                                 </div>
 
                                 <div class="mobile-modal-footer">
