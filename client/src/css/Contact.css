@@ -1,0 +1,22 @@
+.contact
+{
+    background-color: #64f47c;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding:1%;
+}
+
+@media(max-width:767px){
+    .contact
+    {
+        background-color: #64f47c;
+        text-align: center;
+        margin-top: 4%;
+        margin-left: 3%;
+        margin-right: 3%;
+        padding:2%;
+    }
+    
+}

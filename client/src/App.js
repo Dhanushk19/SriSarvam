@@ -8,10 +8,10 @@ import Login from "../src/components/Login";
 import NoPage from "../src/components/NoPage";
 import "./index.css";
 import "./App.css";
-
 function App() {
   return (
     <>
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navbar2 />}>
@@ -24,6 +24,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    
     </>
   );
 }

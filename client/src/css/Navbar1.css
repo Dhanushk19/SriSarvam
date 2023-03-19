@@ -248,42 +248,8 @@
  
  
  
- .section-1{
  
-     width: 100vw;
-     height: 95vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
- 
- .section-1 p{
- 
-     font-size: 75px;
-     font-weight: 700;
-     color: #102447;
-     width: 90%;
-     text-align: center;
- }
- 
- @media(max-width:767px){
- 
-     .section-1 p{
- 
-         font-size: 50px;
-         text-align: start;
-         width: 70%;
-         margin: auto;
-     }
- }
 
  header .fontbars{
   -webkit-text-stroke: 2px white;
 }
-/* 
-header .fontbarsx{
-    font-size:xx-large;
-    font-weight:lighter;
-    
-
-  } */

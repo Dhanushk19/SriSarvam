@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
+
+body{
+
+    font-family: 'Urbanist', sans-serif;
+    overflow-x: hidden;
+}
+.about
+{
+    background-color: #64f47c;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding:1%;
+}
+
+@media(max-width:767px){
+    .about
+    {
+        background-color: #64f47c;
+        text-align: center;
+        margin-top: 4%;
+        margin-left: 3%;
+        margin-right: 3%;
+        padding:2%;
+    }
+    
+}

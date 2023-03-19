@@ -1,7 +1,8 @@
+import "../css/About.css";
 function About()
 {
     return(
-        <div>About</div>
+        <h4 className="about"><i class="fa-solid fa-circle-info"></i>&nbsp; About</h4>
     )
 }
 
