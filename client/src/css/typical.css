@@ -1,0 +1,15 @@
+#cursor {
+    border-left: .1em solid #0E8388;
+    animation: blink .7s steps(1) infinite;
+  }
+
+  .heading
+  {
+    color: #40513B;
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
