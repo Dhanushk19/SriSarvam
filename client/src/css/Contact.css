@@ -1,22 +1,66 @@
-.contact
-{
+.contact {
     background-color: #64f47c;
     text-align: center;
     margin-top: 2%;
     margin-left: 1%;
     margin-right: 1%;
-    padding:1%;
+    padding: 1%;
 }
 
-@media(max-width:767px){
-    .contact
-    {
+.map {
+    
+    position:absolute;
+    height: 80%;
+    width: 100%;
+    padding: 0px;
+    border-width: 0px;
+    margin: 0px;
+    left: 0px;
+    margin-top: 2%;
+  
+}
+.cont
+{
+    text-align: center;
+    
+}
+
+.add
+{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.addc
+{
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.addp
+{
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+.title
+{
+    text-align: center;
+    font-weight: 700;
+    padding: 1%;
+    letter-spacing: 3px;
+    text-decoration:underline;
+
+}
+
+@media(max-width:992px) {
+    .contact {
         background-color: #64f47c;
         text-align: center;
         margin-top: 4%;
         margin-left: 3%;
         margin-right: 3%;
-        padding:2%;
+        padding: 2%;
     }
+
     
+
 }

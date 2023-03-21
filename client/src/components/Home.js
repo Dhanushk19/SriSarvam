@@ -20,7 +20,7 @@ function Home() {
       <h6 className="compname"><Typer heading="Sri Sarvam Oils : "
         dataText={[
           "Nature's goodness in every drop.",
-          "Pure and unadulterated oil", " straight from the source.",
+          "Pure and unadulterated oil", 
           "The way nature intended it.",
           "Healthy living begins with pure, wood-pressed oil.",
           "Traditionally made, naturally pure."
@@ -178,7 +178,7 @@ function Home() {
           </div>
           <div className="col-sm-5">
             <h5 className="bottom">Address :</h5>
-            <h6 className="address"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Sri Vaari Electrical Building ,<br></br> Karur main road ,<br></br> Kalipalayam ,<br></br> Tiruppur District,<br></br> Tamil nadu - 638661 .</h6>
+            <h6 className="address"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Sri Vaari Electrical Building ,<br></br> Karur main road ,<br></br> Kalipalayam Post,<br></br>Dharapuram, Tiruppur District,<br></br> Tamil nadu - 638661 .</h6>
           </div>
           <div className="col-sm-3">
             <h5 className="bottom">Email :</h5>
