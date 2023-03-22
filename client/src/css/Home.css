@@ -5,18 +5,26 @@
     margin-left: 1%;
     margin-right: 1%;
     padding: 1%;
-}
 
+    border-radius: 15px;
+}
+#root > div.caromod.carousel.slide > div.carousel-inner > .active{
+    border-bottom: 0px;
+}
 .caromod {
     margin-left: 25%;
     width: 50%;
     height: 50%;
-    background-color: #FFF1DC;
+    background-color: #dbf8e0;
 }
 
 .compname {
     padding: 2%;
     text-align: center;
+}
+
+.carousel-item{
+    background-color:none  !important;
 }
 
 .Quote1 {
@@ -42,7 +50,7 @@
 }
 
 .adv {
-    border: 2px solid black;
+    border: 2px solid #64f47c;
     border-radius: 20px;
     margin-left: 15%;
     margin-right: 15%;
@@ -76,17 +84,18 @@
 }
 
 .card {
-    border: 1px solid black;
+    border: 1px solid #64f47c;
     border-radius: 5px;
 }
 
 .prodfull {
-    border: 2px solid black;
+    border: 2px solid #64f47c;
     margin-top: 2%;
     margin-left: 7%;
     margin-right: 7%;
     border-radius: 20px;
 }
+
 
 .oprod {
     text-align: center;
@@ -98,7 +107,7 @@
 }
 
 .card1 {
-
+    border : 2px solid #64f47c;
     border-radius: 5px;
 
 }
@@ -117,7 +126,9 @@
     text-align: center;
     padding-top: 5%;
     padding-bottom: 5%;
+    margin: 0;
     background-color: #B1AFFF;
+   
 }
 
 
@@ -241,6 +252,11 @@
 
     .col-sm-4 {
         padding-top: 5%;
+    }
+
+    .col-sm-3
+    {
+        padding-bottom: 5%;
     }
 
 

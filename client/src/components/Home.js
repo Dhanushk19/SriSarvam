@@ -74,8 +74,9 @@ function Home() {
               <div class="card1" >
                 <div class="card-body">
                   <img src={oil1} alt="Coconut oil" className="sun1" />
-                  <h5 class="card-title1" >Coconut Oil</h5>
+                  <h5 class="card-title1" >Coconut Oil</h5>    
                 </div>
+              
               </div>
             </a>
           </div>
@@ -94,7 +95,9 @@ function Home() {
             <a href="/products" className="anchor">
               <div class="card1">
                 <div class="card-body">
+                  <div className="img-wrapper">
                   <img src={oil3} alt="Gingelly Oil" className="sun1" />
+                  </div>
                   <h5 class="card-title1">Gingelly Oil</h5>
 
                 </div>
