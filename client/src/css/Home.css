@@ -195,7 +195,7 @@
         margin-left: 10%;
         margin-right: 10%;
         margin-bottom: 7%;
-        margin-top: 1%;
+        margin-top: 10%;
     }
 
     .oprod {
@@ -208,15 +208,15 @@
     }
 
     .prodfull {
-        border: 2px solid black;
-        margin-top: 10%;
+        border: 2px solid #64f47c;
+        margin-top: 12%;
         margin-left: 7%;
         margin-right: 7%;
         border-radius: 20px;
     }
 
     .adv {
-        border: 2px solid black;
+        border: 2px solid #64f47c;
         border-radius: 20px;
         margin-left: 10%;
         margin-right: 10%;
@@ -256,7 +256,7 @@
 
     .col-sm-3
     {
-        padding-bottom: 5%;
+        padding-bottom: 10%;
     }
 
 

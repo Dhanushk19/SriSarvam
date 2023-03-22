@@ -181,7 +181,7 @@ function Home() {
           </div>
           <div className="col-sm-5">
             <h5 className="bottom">Address :</h5>
-            <h6 className="address"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Sri Vaari Electrical Building ,<br></br> Karur main road ,<br></br> Kalipalayam Post,<br></br>Dharapuram, Tiruppur District,<br></br> Tamil nadu - 638661 .</h6>
+            <h6 className="address"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Sri Vaari Electrical Building,<br></br> Karur main road,<br></br> Kalipalayam Post,<br></br>Dharapuram, Tiruppur District,<br></br> Tamil nadu - 638661.</h6>
           </div>
           <div className="col-sm-3">
             <h5 className="bottom">Email :</h5>
