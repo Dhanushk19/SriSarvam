@@ -104,6 +104,7 @@
     margin-left: 30%;
     margin-right: 30%;
     padding: 1%;
+    border-radius: 15px;
 }
 
 .card1 {
@@ -185,6 +186,8 @@
 .bottom {
     font-weight: bolder;
 }
+
+
 
 @media(max-width:767px) {
     .card {

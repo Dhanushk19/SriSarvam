@@ -24,7 +24,7 @@
  header{
  
      width: 100vw;
-     height: 100px;
+     height: 90px;
      background-color:#fff;
      box-shadow: 0px 3px 8px rgba(0, 0, 0, 25%);
      display: flex;
@@ -65,7 +65,7 @@
  header .item{
  
      text-align: center;
-     margin-inline: 11%;
+     margin-inline: 7%;
      font-weight: 500;
      font-size: 22px;
      letter-spacing: 3px;
@@ -95,11 +95,14 @@
      font-weight: 600;
      color: #000000;
      transition: all .5s ease;
+     border-radius: 18px;
  }
  
  header .item-button a:hover{
  
-     background-color: #08661a;
+     background-color: #fff;
+     border: 2px solid #25d242;
+     color: #25d242;
  }
  
  header .mobile-toggler{
@@ -128,7 +131,7 @@
      border-radius: 0;
      height: 100vh;
      overflow-y: scroll;
-     background-color: #B1AFFF;
+     background-color:#102447;
  }
  
  .modal-header{
