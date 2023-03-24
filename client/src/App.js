@@ -8,10 +8,11 @@ import Login from "../src/components/Login";
 import NoPage from "../src/components/NoPage";
 import "./index.css";
 import "./App.css";
+import PreLoader from "./components/PerLoader";
 function App() {
   return (
     <>
-    
+    <PreLoader/>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navbar2 />}>
