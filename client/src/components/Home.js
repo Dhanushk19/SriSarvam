@@ -13,9 +13,11 @@ import woodp from "../assets/woodp.jpg";
 import logo1 from "../assets/logo1b.png";
 import Typer from "./typical";
 import ScrollToTop from "../components/top.js";
+
 function Home() {
   return (
     <>
+      
       <h4 className="home"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Home</h4>
       <h6 className="compname"><Typer heading="Sri Sarvam Oils : "
         dataText={[

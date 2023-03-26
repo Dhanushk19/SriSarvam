@@ -12,9 +12,6 @@ function About()
     return(
         <>
         <h4 className="about"><i class="fa-solid fa-circle-info"></i>&nbsp; About</h4>
-        
-        
-
         <div class="container-fluid">
             
             <div className="image">
@@ -88,6 +85,9 @@ function About()
         <i class='fas fa-thumbs-up'></i>
         </div>        
         </>
+
+        
+
     )
 }
 
