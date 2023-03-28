@@ -13,11 +13,12 @@ import woodp from "../assets/woodp.jpg";
 import logo1 from "../assets/logo1b.png";
 import Typer from "./typical";
 import ScrollToTop from "../components/top.js";
-import Loader from "../components/Loader";
+import PreLoader from "../components/PerLoader";
+
 function Home() {
   return (
     <>
-      <Loader/>
+    <PreLoader/>
       <h4 className="home"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Home</h4>
       <h6 className="compname"><Typer heading="Sri Sarvam Oils : "
         dataText={[
@@ -68,7 +69,7 @@ function Home() {
           />
         </Carousel.Item>
       </Carousel>
-      <div className="prodfull">
+      {/* <div className="prodfull">
         <h3 className="oprod">Our Products</h3>
         <div class="row" id="oil">
           <div class="col-sm-3" >
@@ -118,8 +119,97 @@ function Home() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
+      <h3 className="oprod">Our Products</h3>
+       <div class="ag-format-container">
+  <div class="ag-courses_box">
+    <div class="ag-courses_item">
+      <a href="/products" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
 
+        <div class="ag-courses-item_title">
+        <img src={oil1} alt="Coconut oil" className="sun1" />
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date">
+            Coconut Oil
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="/products" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+        <img src={oil2} alt="Groundnut Oil" className="sun1" />
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date">
+            Groundnut oil
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="/products" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+        <img src={oil3} alt="Gingelly Oil" className="sun1" />
+        </div>
+
+        <div class="ag-courses-item_date-box">
+        
+          <span class="ag-courses-item_date">
+            Gingelly Oil
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="/products" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+        <img src={oil4} alt="Castor oil" className="sun1" />
+          
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          
+          <span class="ag-courses-item_date">
+            Castor Oil
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="ag-courses_item">
+      <a href="/products" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+        <img src={group} alt="Castor oil" className="sun1" />
+          
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          
+          <span class="ag-courses-item_date">
+            And Many Combo Packs
+          </span>
+        </div>
+      </a>
+    </div>
+
+    </div>
+</div>
+       
       <h4 className="Quote1">Quality in Every Drop</h4>
 
 
@@ -133,7 +223,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="card">
             <div class="card-body">
               <img src={noprev} alt="No Preservatives" className="sun" />
@@ -142,7 +232,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="card">
             <div class="card-body">
               <img src={adultfree} alt="Adulteration Free" className="sun" />
@@ -151,7 +241,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="card">
             <div class="card-body">
               <img src={natprod} alt="Natural Product" className="sun" />
@@ -165,29 +255,29 @@ function Home() {
       <div className="adv">
         <h4 className="why">Why use Wood Pressed Oil ?</h4>
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-md-6">
             <img src={woodp} alt="woodpress" className="woo"></img>
           </div>
-          <div className="col-sm-6">
+          <div className="col-md-6">
             <p>Wood pressed oil, also known as cold-pressed oil or chekku oil, is extracted from seeds or nuts using traditional wooden presses.Wood pressed oils are often considered to be more nutrient-rich than oils extracted using modern methods. This is because the wooden press method allows for the retention of natural nutrients and antioxidants.Wood pressed oils are extracted without the use of any chemicals, solvents or heat. This means that the oil is free from any harmful residues that could be left behind from chemical extraction processes.</p>
           </div>
         </div>
       </div>
 
-      <div className="compdetails">
+      <div className="compdetails text-center">
         <img src={logo1} alt="compname" className="comname"></img>
-        <div className="row">
-          <div className="col-sm-4">
+        <div className="row text-center">
+          <div className="col-md-4">
             <h5 className="bottom"> Any Doubts ? :</h5>
             <h6 className="doubt"><i class="fa-solid fa-phone"></i>&nbsp;9788718180</h6>
           </div>
-          <div className="col-sm-5">
+          <div className="col-md-4">
             <h5 className="bottom">Address :</h5>
             <h6 className="address"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Sri Vaari Electrical Building,<br></br> Karur main road,<br></br> Kalipalayam Post,<br></br>Dharapuram, Tiruppur District,<br></br> Tamil nadu - 638661.</h6>
           </div>
-          <div className="col-sm-3">
+          <div className="col-md-4">
             <h5 className="bottom">Email :</h5>
-            <h6 className="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;sample@gmail.com</h6>
+            <h6 className="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;srisarvamoils@gmail.com</h6>
           </div>
         </div>
       </div>

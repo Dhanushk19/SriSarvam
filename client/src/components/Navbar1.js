@@ -39,7 +39,7 @@ function Header() {
                     </div>
 
 
-                    <div class="mobile-toggler d-lg-none">
+                    <div class="mobile-toggler d-xl-none">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
                         <i class="fa fa-solid fa-bars fontbars"></i>
                         </a>

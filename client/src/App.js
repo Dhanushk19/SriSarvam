@@ -12,7 +12,7 @@ import PreLoader from "./components/PerLoader";
 function App() {
   return (
     <>
-    <PreLoader/>
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navbar2 />}>
