@@ -1,11 +1,11 @@
-.active
+.nav-items .active
 {
     padding-bottom: 4px;
     border-bottom: 3px solid #64f47c;
 }
 
-body{
+/* body{
     background-image: url('../src/assets/back1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */

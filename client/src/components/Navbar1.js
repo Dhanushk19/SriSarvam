@@ -15,7 +15,7 @@ function Header() {
                         <img src={logo1} alt="Logo" />
                     </div>
 
-                    <div class="navb-items d-none d-xl-flex">
+                    <div class="navb-items nav-items d-none d-xl-flex">
 
                         <div class="item">
                             <NavLink to="/"  >Home</NavLink>

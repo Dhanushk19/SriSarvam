@@ -9,9 +9,7 @@ import sunFil from "../assets/SunFil.jpg";
 import noprev from "../assets/noaddedprev.jpg";
 import adultfree from "../assets/adulterationfree.png";
 import natprod from "../assets/natprod.jpg";
-import woodp from "../assets/woodp.jpg";
 import logo1 from "../assets/logo1b.png";
-import Typer from "./typical";
 import ScrollToTop from "../components/top.js";
 import PreLoader from "../components/PerLoader";
 
@@ -20,14 +18,10 @@ function Home() {
     <>
     <PreLoader/>
       <h4 className="home"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Home</h4>
-      <h6 className="compname"><Typer heading="Sri Sarvam Oils : "
-        dataText={[
-          "Nature's goodness in every drop.",
-          "Pure and unadulterated oil", 
-          "The way nature intended it.",
-          "Healthy living begins with pure, wood-pressed oil.",
-          "Traditionally made, naturally pure."
-        ]} /></h6>
+      <div className="backimg1">      
+      <h6 className="compname">
+        <img className="imgstyling" src={logo1}></img>
+      </h6>
       <Carousel className="caromod">
         <Carousel.Item>
           <img
@@ -69,57 +63,12 @@ function Home() {
           />
         </Carousel.Item>
       </Carousel>
-      {/* <div className="prodfull">
-        <h3 className="oprod">Our Products</h3>
-        <div class="row" id="oil">
-          <div class="col-sm-3" >
-            <a href="/products" className="anchor">
-              <div class="card1" >
-                <div class="card-body">
-                  <img src={oil1} alt="Coconut oil" className="sun1" />
-                  <h5 class="card-title1" >Coconut Oil</h5>    
-                </div>
-              
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-3">
-            <a href="/products" className="anchor">
-              <div class="card1">
-                <div class="card-body">
-                  <img src={oil2} alt="Groundnut Oil" className="sun1" />
-                  <h5 class="card-title1">Groundnut Oil</h5>
-
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-3">
-            <a href="/products" className="anchor">
-              <div class="card1">
-                <div class="card-body">
-                  <div className="img-wrapper">
-                  <img src={oil3} alt="Gingelly Oil" className="sun1" />
-                  </div>
-                  <h5 class="card-title1">Gingelly Oil</h5>
-
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-3">
-            <a href="/products" className="anchor">
-              <div class="card1">
-                <div class="card-body">
-                  <img src={oil4} alt="Castor oil" className="sun1" />
-                  <h5 class="card-title1">Castor oil</h5>
-
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div> */}
+    
+      </div>
+      
+      <div className="imgback2">
+      <div className="fullprod">
+        <h4>&nbsp;</h4>
       <h3 className="oprod">Our Products</h3>
        <div class="ag-format-container">
   <div class="ag-courses_box">
@@ -206,13 +155,14 @@ function Home() {
         </div>
       </a>
     </div>
-
     </div>
+    </div>
+</div>
 </div>
        
       <h4 className="Quote1">Quality in Every Drop</h4>
 
-
+    <div className="backimg3">
       <div class="row" id="info" >
         <div class="col-sm-3">
           <div class="card">
@@ -251,19 +201,9 @@ function Home() {
           </div>
         </div>
       </div>
-
-      <div className="adv">
-        <h4 className="why">Why use Wood Pressed Oil ?</h4>
-        <div className="row">
-          <div className="col-md-6">
-            <img src={woodp} alt="woodpress" className="woo"></img>
-          </div>
-          <div className="col-md-6">
-            <p>Wood pressed oil, also known as cold-pressed oil or chekku oil, is extracted from seeds or nuts using traditional wooden presses.Wood pressed oils are often considered to be more nutrient-rich than oils extracted using modern methods. This is because the wooden press method allows for the retention of natural nutrients and antioxidants.Wood pressed oils are extracted without the use of any chemicals, solvents or heat. This means that the oil is free from any harmful residues that could be left behind from chemical extraction processes.</p>
-          </div>
-        </div>
       </div>
-
+    
+      <div className="backimg2">
       <div className="compdetails text-center">
         <img src={logo1} alt="compname" className="comname"></img>
         <div className="row text-center">
@@ -281,6 +221,8 @@ function Home() {
           </div>
         </div>
       </div>
+      </div>
+      
         <ScrollToTop/>
     </>
   )

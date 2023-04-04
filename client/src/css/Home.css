@@ -15,7 +15,7 @@
     margin-left: 15%;
     width: 70%;
     height: 70%;
-    background-color: #dbf8e0;
+    background-color: none;
 }
 
 .compname {
@@ -34,7 +34,7 @@
     margin-right: 10%;
     padding: 1%;
     background-color: #64f47c;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
 }
 
 #info {
@@ -85,6 +85,7 @@
 
 .card {
     border: 1px ;
+    border : 1px solid black;
     border-radius: 5px;
 }
 
@@ -96,15 +97,21 @@
     border-radius: 20px;
 }
 
+.fullprod
+{
+    margin-bottom: 5%;
+}
 
 .oprod {
     text-align: center;
-    margin-top: 2%;
-    background-color: #7bf992;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-top: 3%;
+    margin-bottom: 1%; 
+    background-color: #64f47c;
+    margin-left: 25%;
+    margin-right: 25%;
     padding: 1%;
-    border-radius: 15px;
+    border-radius: 10px;
+    font-size: x-large;
 }
 
 .card1 {
@@ -134,7 +141,6 @@
    
 }
 
-
 .sun {
     width: 100%;
     height: 15.5rem;
@@ -156,7 +162,9 @@
 
 .compdetails {
     
-    background-color: #b5e7be;
+    background-image: url('../assets/wave1.svg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
     
     padding-bottom: 2px;
     
@@ -207,10 +215,12 @@
     .oprod {
         text-align: center;
         margin-top: 10%;
-        background-color: #B1AFFF;
+        background-color: #64f47c;
         margin-left: 10%;
         margin-right: 10%;
-        padding: 1%;
+        padding: 2%;
+        border-radius: 2px;
+        font-size: larger;
     }
 
     .prodfull {
@@ -218,7 +228,7 @@
         margin-top: 12%;
         margin-left: 7%;
         margin-right: 7%;
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
     .adv {
@@ -289,7 +299,7 @@
 
 @media(max-width:767px) {
     .caromod {
-        background-color: #dbf8e0;
+        background-color: none;
         width: 100%;
         height: 100;
         margin-left: 0%;
@@ -391,7 +401,7 @@
   .ag-courses-item_bg {
     height: 128px;
     width: 128px;
-    background-color: #f9b234;
+    background-color: #3ecd5e;
   
     z-index: 1;
     position: absolute;
@@ -404,18 +414,7 @@
     -o-transition: all .5s ease;
     transition: all .5s ease;
   }
-  .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-    background-color: #3ecd5e;
-  }
-  .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-    background-color: #cd3e94;;
-  }
-  .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-    background-color: #952aff;
-  }
-  .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-    background-color: #4c49ea;
-  }
+
   
   
   
@@ -454,16 +453,46 @@
     }
   }
     
-    @media only screen and (max-width: 700px) {
-      .about
-      {
-          background-color: #64f47c;
-          text-align: center;
-          margin-top: 4%;
-          margin-left: 3%;
-          margin-right: 3%;
-          padding:2%;
-      }
-    }
-    
+  .imgback2
+  {
+          background-image: url('../assets/blob-scene-haikei.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+      
+  }
+
   
+
+
+
+    .backimg1
+    {
+            background-image: url('../assets/wave.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+    }
+
+    .imgstyling
+    {
+        width:30%;
+        height:30%;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .about
+        {
+            background-color: #64f47c;
+            text-align: center;
+            margin-top: 4%;
+            margin-left: 3%;
+            margin-right: 3%;
+            padding:2%;
+        }
+        .imgstyling
+      {
+          width:50%;
+          height:50%;
+          
+      }
+      }
