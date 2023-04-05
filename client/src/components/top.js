@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleUp } from "react-icons/fa";
-
 import "../css/Scroll.css";
 
 const ScrollToTop = () => {

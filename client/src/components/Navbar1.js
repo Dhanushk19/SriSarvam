@@ -33,9 +33,7 @@ function Header() {
                             <NavLink to="/about" >About</NavLink>
                         </div>
 
-                        <div class="item-button">
-                            <a href="/login" type="button" >Login</a>
-                        </div>
+                        
                     </div>
 
 
@@ -74,16 +72,10 @@ function Header() {
                                     <i class="fa-solid fa-circle-info"></i> <a href="/about">About</a>
                                     </div>
 
-                                    <a href="/login" class="navb-button" type="button">Login</a>
+                                    
                                 </div>
 
-                                <div class="mobile-modal-footer">
-
-                                    <a target="_blank" href="#"><i class="fa fa-brands fa-instagram"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-brands fa-linkedin-in"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-brands fa-youtube"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-brands fa-facebook"></i></a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

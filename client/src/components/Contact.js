@@ -4,8 +4,8 @@ function Contact()
 {
     return(
         <>
-        <div className="contactback">
         <h4 className="contact"><i class="fa-solid fa-phone"></i>&nbsp; Contact</h4>
+        <div className="contactback">
         <div className="cont">
             <h4 className="title">Contact Details</h4>
             <div>

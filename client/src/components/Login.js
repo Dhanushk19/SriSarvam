@@ -6,7 +6,7 @@ function Login()
 {
     return(
         <>
-        <h5 className="home">Login</h5>
+        <h5 className="about">Login</h5>
         <div className="fullform">
         <h4 className="admin">Hello Admin !</h4>
         <br></br>
