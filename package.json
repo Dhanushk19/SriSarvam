@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "firebase": "^9.19.1",
     "gsap": "^3.11.5",
     "react-loader": "^2.4.7"
   }

@@ -23,17 +23,17 @@ body {
     background-size: cover;
 
 }
-.aboutcont
-{
+
+.aboutcont {
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
-.ul
-{
+.ul {
     margin-left: 45%;
 }
-.aboutcont p{
+
+.aboutcont p {
     text-align: center;
     font-size: large;
 }
@@ -47,8 +47,8 @@ body {
         background-size: cover;
 
     }
-    .ul
-{
-    margin-left: 20%;
-}
+
+    .ul {
+        margin-left: 20%;
+    }
 }
