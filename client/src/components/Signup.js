@@ -19,7 +19,7 @@ function Login() {
         <div class="login-content">
           <form>
 
-            <h2 class="title">LOGIN</h2>
+            <h2 class="title">Sign Up</h2>
             <div class="input-div one">
               <div class="i">
                 <i class="fas fa-user"></i>
@@ -39,9 +39,9 @@ function Login() {
               </div>
             </div>
             <a className="anc" href="#">Forgot Password?</a>
-            <input type="submit" class="btn" value="Login" />
-            <h5>Don't Have an Account ?</h5>
-            <a  href="/signup" className="signuplink">Sign Up</a>
+            <input type="submit" class="btn" value="Register" />
+            <h5>Already have an account?</h5>
+            <a  href="/login" className="signuplink">Login</a>
           </form>
         </div>
         

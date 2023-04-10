@@ -6,6 +6,7 @@ import Contact from "../src/components/Contact";
 import About from "../src/components/About";
 import Login from "../src/components/Login";
 import NoPage from "../src/components/NoPage";
+import SignUp from "../src/components/Signup.js";
 import "./index.css";
 import "./App.css";
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login/>} />
+          <Route path="signup" element={<SignUp/>} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
