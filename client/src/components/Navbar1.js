@@ -33,12 +33,16 @@ function Header() {
                             <NavLink to="/about" >About</NavLink>
                         </div>
 
+                        <div class="item-button">
+                            <a href="/login" type="button" >Login</a>
+                        </div>
+
                         
                     </div>
 
 
                     <div class="mobile-toggler d-xl-none">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
+                        <a href="/home" data-bs-toggle="modal" data-bs-target="#navbModal">
                         <i class="fa fa-solid fa-bars fontbars"></i>
                         </a>
                     </div>
@@ -72,7 +76,7 @@ function Header() {
                                     <i class="fa-solid fa-circle-info"></i> <a href="/about">About</a>
                                     </div>
 
-                                    
+                                    <a href="/login" class="navb-button" type="button">Login</a>
                                 </div>
 
                                 
