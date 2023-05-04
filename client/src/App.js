@@ -1,28 +1,80 @@
+import React,{useState,useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar2 from "./components/Navbar1";
 import Home from "../src/components/Home";
-import Products from "../src/components/Products";
+import Products from "./components/Products";
 import Contact from "../src/components/Contact";
 import About from "../src/components/About";
 import Login from "../src/components/Login";
 import NoPage from "../src/components/NoPage";
 import SignUp from "../src/components/Signup.js";
+import data from './components/Data';
+import Cart from './components/Cart';
+import Form from "./components/Form";
 import "./index.css";
 import "./App.css";
 function App() {
+  const {productItems}=data;
+  const [cartItems,setCartItems]=useState([]);
+
+  const handleAddProduct=(product)=>{
+    const ProductExist=cartItems.find((item)=>item.id===product.id);
+    if(ProductExist){
+      setCartItems(
+        cartItems.map((item)=>
+        item.id==product.id
+          ?{ ...ProductExist, quantity:ProductExist.quantity+1}
+          :item
+        )
+      );
+    }else{
+        setCartItems([...cartItems,{ ...product,quantity:1}]);
+      }
+    }
+
+    const handleRemoveProduct=(product)=>{
+      const ProductExist=cartItems.find((item)=>item.id===product.id);
+      if(ProductExist){
+        setCartItems(cartItems.filter((item)=>item.id !==product.id));
+      }else{
+        setCartItems(
+        cartItems.map((item)=>
+          item.id==product.id
+          ? { ...ProductExist,quantity:ProductExist.quantity-1}:item
+        )
+
+        );
+      }
+    }
+
+    const handleCartClearance=()=>{
+      setCartItems([]);
+    }
+
+    const [newdata,setNewdata]=useState([]);
+    useEffect(()=>{
+      fetch("http://localhost:8080/postoil").then((result)=>{
+        result.json().then((resp)=>{
+          console.log("new data result",resp);
+          setNewdata(resp);
+        })
+      })
+    },[])
+    console.log("data from postman",newdata);
   return (
     <>
-    
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navbar2 />}>
+        <Route path="/" element={<Navbar2 cartItems={cartItems} />}>
           <Route index element={<Home />} />
-          <Route path="products" element={<Products />} />
+          <Route path="products" element={<Products productItems={productItems} handleAddProduct={handleAddProduct}/>} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<SignUp/>} />
           <Route path="*" element={<NoPage />} />
+          <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
+          <Route path="form" element={<Form/>} />
         </Route>
       </Routes>
     </BrowserRouter>
@@ -30,5 +82,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;

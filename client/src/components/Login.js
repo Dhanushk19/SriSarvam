@@ -26,7 +26,7 @@ function Login() {
               </div>
               <div class="div">
                 
-                <input type="text" class="input" placeholder="Email Id or Phone Number" />
+                <input type="text" class="input" name="email" placeholder="Email Id or Phone Number" />
               </div>
             </div>
             <div class="input-div pass">
@@ -35,7 +35,7 @@ function Login() {
               </div>
               <div class="div">
                 
-                <input type="password" class="input" placeholder="Password" id="myInput"/>
+                <input type="password" class="input" name="password" placeholder="Password" id="myInput"/>
               </div>
             </div>
             <a className="anc" href="#">Forgot Password?</a>

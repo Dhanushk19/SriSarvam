@@ -259,3 +259,14 @@
 }
 
 
+.cart{
+    padding-right: 20px;
+    margin-right: 30px;
+}
+.cart-length{
+    margin: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    vertical-align: super;
+    color: #0ed841;
+}

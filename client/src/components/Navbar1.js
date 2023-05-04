@@ -2,7 +2,7 @@
 import { Outlet,NavLink } from "react-router-dom";
 import "../css/Navbar1.css";
 import logo1 from "../assets/logo1b.png";
-function Header() {
+function Header(props) {
     
 
     return (
@@ -35,6 +35,14 @@ function Header() {
 
                         <div class="item-button">
                             <a href="/login" type="button" >Login</a>
+                        </div>
+                        <div class="item">
+                            <NavLink to="/cart">
+                                <i class="fas fa-shopping-cart"/>
+                                <span className="cart-length">
+                                    {props.cartItems.length ===0 ? "" : props.cartItems.length}
+                                </span>
+                            </NavLink>
                         </div>
 
                         
