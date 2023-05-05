@@ -31,7 +31,7 @@ exports.createProdItem = async (req,res)=>
                 msg:'Created'
             }
         )
-
+        res.send({ status: "ok" });
     }
     catch(err)
     {

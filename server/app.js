@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db.js');
 const prodserv = require('./model/prodserv.js');
+const {getAllProdlist,createProdItem}=require('./controller/prod.js')
 connectDB();
 const app = new express();
 app.use(bodyParser.json());
@@ -30,7 +31,20 @@ app.post("/uploads",async(req,res)=>
     }
 })
 
-app.listen(3000,async ()=>
-{
-    console.log("Server is running");
-})
+// app.listen(5000,async ()=>
+// {
+//     console.log("Server is running");
+// })
+
+// app.post('/postoil',(req,res)=>{
+//     let newitem=req.body;
+//     console.log(newitem);
+//     res.send('created');
+// })
+// app.get('/postoil',(req,res)=>{
+//     res.send(req.body);
+//     console.log(req.body);
+// })
+
+
+app.post('/postItem',createProdItem);

@@ -1,22 +1,41 @@
 import React, { useState } from "react";
 import "../css/form.css";
-
 function Form(){
     const [name,setName]=useState("");
     const [liter,setLiter]=useState("");
     const [price,setPrice]=useState("");
     const [image,setImage]=useState("");
-    function newPost(e){
+    let handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(name,liter,price,image);
-        
-    }
+        console.log("product name",name,liter,price,image);
+    
+          await fetch("http://localhost:5000/postItem", {
+            method: "POST",
+            crossDomain: true,
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({
+              name,
+              liter,
+              price,
+              image,
+            }),
+          })
+          .then((res) =>res.json())
+          .then((data) => {
+            console.log(data, "post send");
+            // alert("Post send Successfully")
+          });
+        };
     return(
         <>
         <h2>Post Form</h2>
         <div className="maindiv">
             <div class="container mt-3">
-            <form action="/action_page.php" >
+            <form action="" onSubmit={handleSubmit} >
                 <div class="mb-3 mt-3">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name of oil" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
@@ -33,7 +52,7 @@ function Form(){
                 <label for="image">Image:</label>
                 <input type="text" class="form-control" id="image" placeholder="Enter URL" name="image" value={image} onChange={(e)=>{setImage(e.target.value)}}/>
                 </div>
-                <button type="submit" class="btn btn-primary" onClick={newPost}>Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>

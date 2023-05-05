@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const ProdSchema = new mongoose.Schema(
 {
+    Name:String,
     Image:Image,
-    StockAvail:String,
     Price:Number,
-    Quantity:String
+    Quantity:Number,
 })
 
 module.exports = mongoose.model('prods',ProdSchema);
