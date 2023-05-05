@@ -1,13 +1,13 @@
 import React from "react";
 import "../css/Login.css";
-function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
+// function myFunction() {
+//   var x = document.getElementById("myInput");
+//   if (x.type === "password") {
+//     x.type = "text";
+//   } else {
+//     x.type = "password";
+//   }
+// }
 
 function Login() {
   return (
@@ -38,10 +38,10 @@ function Login() {
                 <input type="password" class="input" name="password" placeholder="Password" id="myInput"/>
               </div>
             </div>
-            <a className="anc" href="#">Forgot Password?</a>
+            {/* <a  href="/signup" className="anc">Forgot Password?</a> */}
             <input type="submit" class="btn" value="Login" />
             <h5>Don't Have an Account ?</h5>
-            <a  href="/signup" className="signuplink">Sign Up</a>
+            <a  href="/signup"  className="signuplink">Sign Up</a>
           </form>
         </div>
         
