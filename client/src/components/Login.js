@@ -1,23 +1,55 @@
-import React from "react";
+import React, { Component } from "react";
 import "../css/Login.css";
-// function myFunction() {
-//   var x = document.getElementById("myInput");
-//   if (x.type === "password") {
-//     x.type = "text";
-//   } else {
-//     x.type = "password";
-//   }
-// }
-
-function Login() {
-  return (
-    <>
-
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    const { email, password } = this.state;
+    console.log(email, password);
+    fetch("http://localhost:5000/admin", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+        if (data.status == "ok") {
+          // window.localStorage.setItem("token", data.data);
+          window.location.href = "./form";
+          alert("login successfull");
+        }
+        if(data.error==="User"){
+          alert("user not match");
+        }
+        if(data.error==="password not"){
+          alert("password not match");
+        }
+      });
+  }
+  render() {
+    return (
+      <>
       <div class="container">
 
 
         <div class="login-content">
-          <form>
+          <form onSubmit={this.handleSubmit}>
 
             <h2 class="title">LOGIN</h2>
             <div class="input-div one">
@@ -26,7 +58,9 @@ function Login() {
               </div>
               <div class="div">
                 
-                <input type="text" class="input" name="email" placeholder="Email Id or Phone Number" />
+            
+                <input type="text" class="input" name="email" placeholder="Email Id or Phone Number" 
+                 onChange={(e) => this.setState({ email: e.target.value })}/>
               </div>
             </div>
             <div class="input-div pass">
@@ -35,7 +69,8 @@ function Login() {
               </div>
               <div class="div">
                 
-                <input type="password" class="input" name="password" placeholder="Password" id="myInput"/>
+                <input type="password" class="input" name="password" placeholder="Password" id="myInput"
+                 onChange={(e) => this.setState({ password: e.target.value })}/>
               </div>
             </div>
             {/* <a  href="/signup" className="anc">Forgot Password?</a> */}
@@ -44,11 +79,9 @@ function Login() {
             <a  href="/signup"  className="signuplink">Sign Up</a>
           </form>
         </div>
-        
-      </div>
-    </>
 
-  )
+        </div>
+      </>
+    );
+  }
 }
-
-export default Login;
