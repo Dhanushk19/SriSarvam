@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const ProdSchema = new mongoose.Schema(
 {
     Name:String,
-    Image:Image,
+    Liter:Number,
     Price:Number,
-    Quantity:Number,
+    Image:String,
+    
 })
 
-module.exports = mongoose.model('prods',ProdSchema);
+module.exports = mongoose.model('Prods',ProdSchema);

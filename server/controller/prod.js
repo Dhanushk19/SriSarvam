@@ -1,12 +1,12 @@
-const Prod = require("../model/prodserv.js");
+const Prods = require("../model/prodserv.js");
 
 exports.getAllProdlist = async(req,res)=>
 {
     try{
-        const prods = await Prod.find();
+        const prods1 = await Prods.find();
         return res.status(200).json({
-            data:prods,
-            length:prods.length
+            data:prods1,
+            length:prods1.length
         })
     }
     catch(err)
@@ -22,25 +22,26 @@ exports.getAllProdlist = async(req,res)=>
 
 exports.createProdItem = async (req,res)=>
 {
+    // const Name1 = req.body.Name;
+    // console.log(Name1);
+    // const Liter1 = req.body.Liter;
+    // const Price1 = req.body.price;
+    // const Image1 = req.body.Image;
+    // const details = new Prods({Name:Name1,Liter:Liter1,Price:Price1,Image:Image1});
+    const body1 = req.body;
     try{
-        const newprod = req.body;
-        console.log(newprod)
-        await Prod.create(newprod);
-        res.status(200).json(
-            {
-                msg:'Created'
-            }
-        )
-        res.send({ status: "ok" });
+        await body1.save();
+        res.status(201).json({msg:"new image uploaded...!"})
     }
     catch(err)
     {
-        console.log(err);
+        
         res.status(500).json(
             {
                 msg:'Server Error Internal'
             }
         )
+        console.log(err);
     }
 }
 
