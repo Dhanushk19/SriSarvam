@@ -12,7 +12,7 @@ const Cart=(props)=>{
                         <button className="clear-cart-button" onClick={props.handleCartClearance}>Clear</button>
                     )}
                 </div>
-                {props.cartItems.length==0&&(
+                {props.cartItems.length===0&&(
                     <div className="cart-items-empty">No items are added.</div>
                 )}
                 <div>
