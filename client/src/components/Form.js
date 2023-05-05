@@ -9,7 +9,7 @@ function Form(){
         e.preventDefault();
         console.log("product name",name,liter,price,image);
     
-          await fetch("http://localhost:5000/postItem", {
+          await fetch("http://localhost:8080/postItem", {
             method: "POST",
             crossDomain: true,
             headers: {

@@ -109,23 +109,41 @@ exports.AddProdSchema = async (req,res)=>
     
 // }
 
-exports.AdminDetailsScehma=async(req,res)=>{
-    const {email, password} = req.body;
-    const user = await Admin.findOne({ email});
-    const pass = await Admin.findOne({ password});
-    if (!user) {
-        return res.json({ error: "User" });
+exports.UserDetailsScehma=async(req,res)=>{
+  const {email, password} = req.body;
+  try {
+    
+    const oldUser = await UserLogin.findOne({ email });
+
+    if (oldUser) {
+      return res.json({ error: "User Exists" });
     }
 
-    if(!pass){
-        return res.send({error: "password not"})
+    await UserLogin.create({
+      email,
+      password,
+    });
+    res.send({ status: "ok" });
+  } catch (error) {
+    res.send({ status: "error",error: "error" });
+  }
+}
+
+exports.UserDetailsScehma=async(req,res)=> {
+  const { email, password } = req.body;
+
+  const user = await UserLogin.findOne({ email });
+  if (!user) {
+    return res.json({ error: "email not match" });
+  }
+  if (await compare(password, user.password)) {
+    // const token = jwt.sign({ id: user.id }, JWT_SECRET);
+
+    if (res.status(201)) {
+      return res.json({ status: "ok"});
+    } else {
+      return res.json({ error: "error" });
     }
-    if(pass){
-        if (res.status(201)) {
-            return res.json({ status: "ok" });
-        } else {
-            return res.json({ error: "error" });
-        }
-    }
-    res.json({ status: "error", error: "Password" });
+  }
+  res.json({ status: "error", error: "InvAlid Password" });
 }

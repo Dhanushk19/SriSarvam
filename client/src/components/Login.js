@@ -13,7 +13,7 @@ export default class Login extends Component {
     e.preventDefault();
     const { email, password } = this.state;
     console.log(email, password);
-    fetch("http://localhost:5000/admin", {
+    fetch("http://localhost:8080/login-user", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -29,16 +29,16 @@ export default class Login extends Component {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.status == "ok") {
-          // window.localStorage.setItem("token", data.data);
-          window.location.href = "./form";
-          alert("login successfull");
-        }
-        if(data.error==="User"){
-          alert("user not match");
-        }
-        if(data.error==="password not"){
+        if (data.error === "InvAlid Password") {
           alert("password not match");
+        }
+        if (data.error === " email Exists ") {
+          alert("email Exits");
+        }
+        if (data.status === "ok") {
+          alert("login successful");
+          window.localStorage.setItem("token", data.data);
+          window.location.href = "./cart";
         }
       });
   }

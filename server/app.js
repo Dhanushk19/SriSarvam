@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db.js');
 const prodserv = require('./model/prodserv.js');
-const {AdminDetailsScehma,AddProdSchema}=require('./controller/prod.js')
+const {UserDetailsScehma,AddProdSchema}=require('./controller/prod.js')
 connectDB();
 const app = new express();
 app.use(bodyParser.json());
@@ -42,5 +42,5 @@ app.post("/uploads",async(req,res)=>
 // })
 
 
-app.post('/postItem',AddProdSchema);
-app.post('/admin',AdminDetailsScehma)
+app.post('/login-user',AddProdSchema);
+app.post('/register',UserDetailsScehma)

@@ -10,10 +10,10 @@ const AddProdSchema = new mongoose.Schema(
 
     module.exports = mongoose.model('prods',AddProdSchema);
 
-const AdminDetailsScehma = new mongoose.Schema(
+const UserDetailsScehma = new mongoose.Schema(
     {
       email: { type: String },
       password: String, 
     });
   
-    module.exports = mongoose.model('AdminInfo', AdminDetailsScehma);
+    module.exports = mongoose.model('UserLogin', UserDetailsScehma);
