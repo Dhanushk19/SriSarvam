@@ -18,7 +18,3 @@ app.post("/uploads",createProdItem);
 
 const port = process.env.PORT || 8080 ;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
-
-// app.listen(5000,()=>{
-//     console.log('server is connected')
-// })
