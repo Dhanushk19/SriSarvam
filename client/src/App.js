@@ -53,7 +53,7 @@ function App() {
 
     const [newdata,setNewdata]=useState([]);
     useEffect(()=>{
-      fetch("http://localhost:8080/postoil").then((result)=>{
+      fetch("http://localhost:8080/postItem").then((result)=>{
         result.json().then((resp)=>{
           console.log("new data result",resp);
           setNewdata(resp);

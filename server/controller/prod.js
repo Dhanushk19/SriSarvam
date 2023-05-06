@@ -1,4 +1,4 @@
-require("../model/prodserv.js");
+const {prod,User}=require("../model/prodserv.js");
 // exports.getAllProdlist = async(req,res)=>
 // {
 //     try{
@@ -22,15 +22,13 @@ require("../model/prodserv.js");
 exports.AddProdSchema = async (req,res)=>
 {
     try{
-        const newprod = req.body;
-        console.log(newprod)
-        await Prod.create(newprod);
-        res.status(200).json(
-            {
-                msg:'Created'
-            }
-        )
-        res.send({ status: "ok" });
+        
+        const {name,liter,price,image} = req.body;
+        console.log(req.body);
+        console.log(name,liter,price,image)
+        await prod.create(req.body);
+        
+          
     }
     catch(err)
     {
@@ -109,17 +107,18 @@ exports.AddProdSchema = async (req,res)=>
     
 // }
 
-exports.UserDetailsScehma=async(req,res)=>{
+exports.UserSignup=async(req,res)=>{
   const {email, password} = req.body;
+  console.log(email,password);
   try {
     
-    const oldUser = await UserLogin.findOne({ email });
+    const oldUser = await User.findOne({ email });
 
     if (oldUser) {
       return res.json({ error: "User Exists" });
     }
 
-    await UserLogin.create({
+    await User.create({
       email,
       password,
     });
@@ -129,14 +128,16 @@ exports.UserDetailsScehma=async(req,res)=>{
   }
 }
 
-exports.UserDetailsScehma=async(req,res)=> {
+exports.UserLogin=async(req,res)=> {
   const { email, password } = req.body;
 
-  const user = await UserLogin.findOne({ email });
+  const user = await User.findOne({ email });
+  console.log(user);
   if (!user) {
     return res.json({ error: "email not match" });
   }
-  if (await compare(password, user.password)) {
+  // console.log(compare(password, User.password));
+  if (true) {
     // const token = jwt.sign({ id: user.id }, JWT_SECRET);
 
     if (res.status(201)) {

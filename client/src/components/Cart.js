@@ -6,7 +6,7 @@ const Cart=(props)=>{
     return(
         <>
             <div className="cart-items">
-                <h2 className="cart-items-header">Carts Items</h2>
+                <h2 className="cart-items-header">My Carts</h2>
                 <div className="clear-cart">
                     {props.cartItems.length>=1&&(
                         <button className="clear-cart-button" onClick={props.handleCartClearance}>Clear</button>

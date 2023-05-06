@@ -1,61 +1,5 @@
 import React, { Component } from "react";
 import "../css/Login.css";
-// function myFunction() {
-//   var x = document.getElementById("myInput");
-//   if (x.type === "password") {
-//     x.type = "text";
-//   } else {
-//     x.type = "password";
-//   }
-// }
-
-// function Login() {
-//   return (
-//     <>
-
-//       <div class="container">
-
-
-//         <div class="login-content">
-//           <form>
-
-//             <h2 class="title">Sign Up</h2>
-//             <div class="input-div one">
-//               <div class="i">
-//                 <i class="fas fa-user"></i>
-//               </div>
-//               <div class="div">
-                
-//                 <input type="text" class="input" placeholder="Email Id or Phone Number" />
-//               </div>
-//             </div>
-//             <div class="input-div pass">
-//               <div class="i">
-//                 <i class="fas fa-lock"></i>
-//               </div>
-//               <div class="div">
-                
-//                 <input type="password" class="input" placeholder="Password" id="myInput"/>
-//               </div>
-//             </div>
-//             {/* <a className="anc" href="/login">Forgot Password?</a> */}
-//             <input type="submit" class="btn" value="Register" />
-//             <h5>Already have an account?</h5>
-//             <a  href="/login" className="signuplink">Login</a>
-//           </form>
-//         </div>
-        
-//       </div>
-//     </>
-
-//   )
-// }
-
-// export default Login;
-
-
-
-
 
 export default class Signs extends Component {
   constructor(props) {
@@ -68,6 +12,7 @@ export default class Signs extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
+    console.log("function is calling");
     const { email, password } = this.state;
     console.log( email, password);
     fetch("http://localhost:8080/register", {
@@ -85,8 +30,8 @@ export default class Signs extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.error, "userRegister");
-        if (data.error === "Email Exists") {
+        // console.log(data.error, "userRegister is failed");
+        if (data.error === "User Exists") {
           alert("Email Exits");
         }
         // if (data.error === " id Exists ") {
@@ -107,7 +52,7 @@ export default class Signs extends Component {
 
 
         <div class="login-content">
-          <form>
+          <form onSubmit={this.handleSubmit}>
 
             <h2 class="title">Sign Up</h2>
             <div class="input-div one">
@@ -116,7 +61,7 @@ export default class Signs extends Component {
               </div>
               <div class="div">
                 
-                <input type="email" class="input" placeholder="Email Id or Phone Number" onChange={(e) => this.setState({ email: e.target.value })}/>
+                <input type="email" class="input" name="email" placeholder="Email Id or Phone Number" onChange={(e) => this.setState({ email: e.target.value })}/>
               </div>
             </div>
             <div class="input-div pass">
@@ -125,7 +70,7 @@ export default class Signs extends Component {
               </div>
               <div class="div">
                 
-             <input type="password" class="input" placeholder="Password" id="myInput" onChange={(e) => this.setState({ password: e.target.value })}/>
+             <input type="password" class="input" name="password"  placeholder="Password" id="myInput" onChange={(e) => this.setState({ password: e.target.value })}/>
               </div>
             </div>
             {/* <a className="anc" href="/login">Forgot Password?</a> */}

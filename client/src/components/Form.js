@@ -27,7 +27,7 @@ function Form(){
           .then((res) =>res.json())
           .then((data) => {
             console.log(data, "post send");
-            // alert("Post send Successfully")
+            alert("Post send Successfully")
           });
         };
     return(

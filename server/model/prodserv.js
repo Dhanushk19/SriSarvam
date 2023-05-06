@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const AddProdSchema = new mongoose.Schema(
     {
-    Name:String,
-    Image:Image,
-    Price:Number,
-    Quantity:Number,
+    name:String,
+    image:String,
+    price:Number,
+    liter:Number,
     })
 
-    module.exports = mongoose.model('prods',AddProdSchema);
+    module.exports.prod = mongoose.model('prods',AddProdSchema);
 
 const UserDetailsScehma = new mongoose.Schema(
     {
@@ -16,4 +16,4 @@ const UserDetailsScehma = new mongoose.Schema(
       password: String, 
     });
   
-    module.exports = mongoose.model('UserLogin', UserDetailsScehma);
+    module.exports.User = mongoose.model('UserLogin', UserDetailsScehma);

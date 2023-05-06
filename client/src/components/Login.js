@@ -28,12 +28,12 @@ export default class Login extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, "userRegister");
+        console.log(data);
         if (data.error === "InvAlid Password") {
           alert("password not match");
         }
-        if (data.error === " email Exists ") {
-          alert("email Exits");
+        if (data.error === " email not match ") {
+          alert("email not match");
         }
         if (data.status === "ok") {
           alert("login successful");
