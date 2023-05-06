@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import "../css/form.css";
+import axios from 'axios';
+const url = "http://localhost:8080/uploads";
 function Form(){
     const [name,setName]=useState("");
     const [liter,setLiter]=useState("");
     const [price,setPrice]=useState("");
-    const [image,setImage]=useState("");
+    const [postImage, setPostImage] = useState({myFile : ""})
+
+  
     let handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("product name",name,liter,price,image);
+        console.log("Uploaded");
+        console.log("product name",name,liter,price,postImage);
     
-          await fetch("http://localhost:8080/postItem", {
+          await fetch("http://localhost:8080/uploads", {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -21,7 +26,7 @@ function Form(){
               name,
               liter,
               price,
-              image,
+              postImage,
             }),
           })
           .then((res) =>res.json())
@@ -30,6 +35,12 @@ function Form(){
             alert("Post send Successfully")
           });
         };
+        const setImage = async (e) =>
+        {
+          const file = e.target.files[0];
+          const base64 = await convertToBase64(file);
+          setPostImage({...postImage,myFile:base64})
+        }
     return(
         <>
         <h2>Post Form</h2>
@@ -50,7 +61,7 @@ function Form(){
                 </div>
                 <div class="mb-3 mt-3">
                 <label for="image">Image:</label>
-                <input type="text" class="form-control" id="image" placeholder="Enter URL" name="image" value={image} onChange={(e)=>{setImage(e.target.value)}}/>
+                <input type="file" class="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  onChange={(e)=>{setImage(e)}}/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -60,3 +71,19 @@ function Form(){
     );
 }
 export default Form;
+
+function convertToBase64(file){
+  return new Promise((resolve,reject)=>
+  {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () =>
+    {
+      resolve(fileReader.result)
+    };
+    fileReader.onerror = (error) =>
+    {
+      reject(error)
+    }
+  })
+}
