@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "../css/form.css";
-import axios from 'axios';
 const url = "http://localhost:8080/uploads";
 function Form(){
     const [name,setName]=useState("");
     const [liter,setLiter]=useState("");
     const [price,setPrice]=useState("");
-    const [postImage, setPostImage] = useState({myFile : ""})
+    const [postImage, setPostImage] = useState("")
 
   
     let handleSubmit = async (e) => {
@@ -14,7 +13,7 @@ function Form(){
         console.log("Uploaded");
         console.log("product name",name,liter,price,postImage);
     
-          await fetch("http://localhost:8080/uploads", {
+          await fetch("http://localhost:8080/postItem", {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -61,7 +60,7 @@ function Form(){
                 </div>
                 <div class="mb-3 mt-3">
                 <label for="image">Image:</label>
-                <input type="file" class="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  onChange={(e)=>{setImage(e)}}/>
+                <input type="file" class="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  onChange={(e)=>setImage(e)}/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
