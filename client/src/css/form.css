@@ -1,10 +1,42 @@
+
 .maindiv{
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    margin-left: 40%;
 }
 h2{
     text-align: center;
     font-weight: bold;
-    font-size: 700;
+    font-size: 600;
     padding-top: 20px;
 }
+
+.ss__control label{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.ss__control input
+{
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+}
+
+.ss__actions {
+    margin-top: 2%;
+  }
+
+  @media only screen and (max-width: 979px) 
+  {
+    .maindiv{
+        margin-left: 0;
+    }
+  }
