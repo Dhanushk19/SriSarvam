@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/form.css";
 import Axios from "axios";
-import Button from 'react-bootstrap/Button';
+import AdminNav from "./Admin/AdminNav";
 const url = "http://localhost:8080/uploads";
 function Form() {
   const [name, setName] = useState("");
@@ -44,6 +44,7 @@ function Form() {
 
   return (
     <>
+      <AdminNav/>
       <h2>Post Form</h2>
         <div className="maindiv">
             <div class="container mt-3">

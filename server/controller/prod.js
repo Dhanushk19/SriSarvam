@@ -1,4 +1,5 @@
 const {Prod,User}=require("../model/prodserv.js");
+const Admin=require('../model/admin.js');
 // exports.getAllProdlist = async(req,res)=>
 // {
 //     try{
@@ -18,6 +19,30 @@ const {Prod,User}=require("../model/prodserv.js");
 //         )
 //     }
 // }
+
+
+
+exports.AdminInfo = async (req,res)=>{
+  const {email, password} = req.body;
+  const user = await Admin.findOne({ email});
+  const pass = await Admin.findOne({ password});
+  if (!user) {
+    return res.json({ error: "User not found" });
+  }
+
+  if(!pass){
+    return res.send({error: "password not match"})
+  }
+  if(pass){
+    if (res.status(201)) {
+      return res.json({ status: "ok" });
+    } else {
+      return res.json({ error: "error" });
+    }
+  }
+  res.json({ status: "error", error: "Password" });
+}
+
 
 exports.AddProdSchema = async (req,res)=>
 {
