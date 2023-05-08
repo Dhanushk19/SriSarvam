@@ -1,40 +1,48 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const {Prod}=require('./model/prodserv.js');
 const cors = require('cors');
 const connection = require('./config/db.js');
-const {UserSignup,UserLogin,AddProdSchema}=require('./controller/prod.js')
-var bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+const {UserSignup,UserLogin,AddProdSchema,getProduct}=require('./controller/prod.js')
+const myParser = require("body-parser");
+app.use(myParser.json({limit: '200mb'}));
+app.use(myParser.urlencoded({limit: '200mb', extended: true}));
+
 connection();
 
 app.use(express.json())
 app.use(cors());
 
-app.get('/',(req,res)=>
-{
-    try{
-        
-        res.json("Home route")
-    }catch(err)
-    {
-        res.json({err})
-    }
-})
 
-app.post("/uploads",async(req,res)=>
-{
-    const body = req.body;
+
+app.get('/postItem',getProduct);
+
+app.post("/uploads",async (req,res)=>{
+    console.log(req.body);
     try{
-        const newImage = await prods.create(body);
-        newImage.save();
-        res.status(201).json({msg:"new image uploaded...!"})
-    }catch(error)
-    {
-        res.status(409).json({message:error.message})
-    }
-})
+    const name=req.body.name
+    const liter=req.body.liter
+     const price=req.body.price
+     const image=req.body.image
+     
+ 
+     const shop=new Prod({
+        name:req.body.name,
+      liter:req.body.liter,
+       price:req.body.price,
+         image:req.body.image});
+ 
+         await shop.save();
+         console.log(shop);
+         res.send("inserted data");
+     }
+     catch(err)
+     {
+         console.log(err);
+     }
+ });
+ 
 
 // app.post('/postoil',(req,res)=>{
 //     let newitem=req.body;
@@ -48,7 +56,7 @@ app.post("/uploads",async(req,res)=>
 
 app.post('/register',UserSignup);
 app.post('/login-user',UserLogin);
-app.post('/postItem',AddProdSchema);
+app.get('/postItem',AddProdSchema);
 
 
 

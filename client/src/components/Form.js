@@ -1,51 +1,54 @@
 import React, { useState } from "react";
 import "../css/form.css";
+import Axios from "axios";
+import Button from 'react-bootstrap/Button';
 const url = "http://localhost:8080/uploads";
-function Form(){
-    const [name,setName]=useState("");
-    const [liter,setLiter]=useState("");
-    const [price,setPrice]=useState("");
-    const [postImage, setPostImage] = useState("")
+function Form() {
+  const [name, setName] = useState("");
+  const [liter, setLiter] = useState("");
+  const [price, setPrice] = useState("");
 
-  
-    let handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log("Uploaded");
-        console.log("product name",name,liter,price,postImage);
-    
-          await fetch("http://localhost:8080/postItem", {
-            method: "POST",
-            crossDomain: true,
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              "Access-Control-Allow-Origin": "*",
-            },
-            body: JSON.stringify({
-              name,
-              liter,
-              price,
-              postImage,
-            }),
-          })
-          .then((res) =>res.json())
-          .then((data) => {
-            console.log(data, "post send");
-            alert("Post send Successfully")
-          });
-        };
-        const setImage = async (e) =>
-        {
-          const file = e.target.files[0];
-          const base64 = await convertToBase64(file);
-          setPostImage({...postImage,myFile:base64})
-        }
-    return(
-        <>
-        <h2>Post Form</h2>
+  const [imageUrl, setImageurl] = useState("")
+  const uploadImage = async () => {
+    const files = document.getElementById("file-upload").files;
+    console.log(files);
+    const data = new FormData()
+    data.append('file', files[0])
+    console.log(files[0]);
+
+    data.append('upload_preset', 'srisarvamimages')
+
+    const res = await fetch("https://api.cloudinary.com/v1_1/dupbwy7pi/image/upload",
+      {
+        method: 'POST',
+        body: data
+      })
+
+    const file = await res.json()
+    console.log(file)
+    console.log(file.url)
+    setImageurl(file.url)
+
+
+  }
+  const create = (e) => {
+    e.preventDefault();
+  console.log("dfyygh")
+    uploadImage();
+    Axios.post(url, {
+      name: name,
+      liter: liter,
+      price: price,
+      image: imageUrl,
+    })
+  };
+
+  return (
+    <>
+      <h2>Post Form</h2>
         <div className="maindiv">
             <div class="container mt-3">
-            <form action="" onSubmit={handleSubmit} >
+            <form  onSubmit={e=>create(e)} >
                 <div class="mb-3 mt-3">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name of oil" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
@@ -60,29 +63,15 @@ function Form(){
                 </div>
                 <div class="mb-3 mt-3">
                 <label for="image">Image:</label>
-                <input type="file" class="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  onChange={(e)=>setImage(e)}/>
+                <input type="file" class="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>
-        </>
-    );
+
+    </>
+  );
 }
 export default Form;
 
-function convertToBase64(file){
-  return new Promise((resolve,reject)=>
-  {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.onload = () =>
-    {
-      resolve(fileReader.result)
-    };
-    fileReader.onerror = (error) =>
-    {
-      reject(error)
-    }
-  })
-}

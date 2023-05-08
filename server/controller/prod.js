@@ -28,6 +28,7 @@ exports.AddProdSchema = async (req,res)=>
         console.log(name,liter,price,image)
         await prod.create(req.body);
         
+        
           
     }
     catch(err)
@@ -85,6 +86,20 @@ exports.AddProdSchema = async (req,res)=>
     
 // }
 
+
+exports.getProduct = async (req,res)=>{
+  try{
+    console.log("get product is working");
+    const all = await prod.find();
+    // res.json({ status: 'success' });
+    // return console.log(allData);
+    console.log(all);
+    res.status(200).json(all)
+  }
+  catch(error){
+    console.log("karthi -> "+error);
+  }
+}
 // exports.Updatetodo = async (req,res)=>
 // {
 //     try{

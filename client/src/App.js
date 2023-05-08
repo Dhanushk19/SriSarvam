@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Axios from "axios";7
 import Navbar2 from "./components/Navbar1";
 import Home from "../src/components/Home";
 import Products from "./components/Products";
@@ -53,11 +54,13 @@ function App() {
 
     const [newdata,setNewdata]=useState([]);
     useEffect(()=>{
-      fetch("http://localhost:8080/postItem").then((result)=>{
+      Axios.get("http://localhost:8080/postItem").then((result)=>{
         result.json().then((resp)=>{
           console.log("new data result",resp);
           setNewdata(resp);
         })
+      }).catch(e=>{
+        console.log(e)
       })
     },[])
     console.log("data from postman",newdata);
