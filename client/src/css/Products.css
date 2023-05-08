@@ -33,7 +33,7 @@
 }
 .card{
     width: 300px;
-    height: 450px;
+    height: 470px;
     border:1px solid black;
     border-radius: 5px;
     overflow: hidden;
@@ -43,8 +43,8 @@
 }
 .product-image{
     width: 100%;
-    max-width: 300px;
-    min-height: 200px;
+    max-width: 150px;
+    min-height: 100px;
     display: block;
     object-fit: cover;
 }
@@ -61,7 +61,7 @@
 .product-add-button{
     font-weight: 700;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 30px;
     border: none;
     outline: none;
     background-color: black;

@@ -2,13 +2,13 @@ import "../css/Products.css";
 const Products=(props)=>
 
 {
-    console.log(props.productItems);
+    console.log("item fetched in product",props.newdata);
     return(
         <>
        
         <h4 className="Products"><i class="fa-solid fa-droplet"></i>&nbsp; Products</h4>
         <div className="allproducts">
-            {props.productItems.map((productItem)=>(
+            {props.newdata.map((productItem)=>(
                 <div className="card">
                     <div>
                         {console.log("data"+productItem.image)}

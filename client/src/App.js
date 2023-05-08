@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Axios from "axios";7
+import Axios from "axios";
 import Navbar2 from "./components/Navbar1";
 import Home from "../src/components/Home";
 import Products from "./components/Products";
@@ -14,6 +14,7 @@ import Cart from './components/Cart';
 import Form from "./components/Form";
 import "./index.css";
 import "./App.css";
+import AdminNav from "./components/Admin/AdminNav";
 function App() {
   const {productItems}=data;
   const [cartItems,setCartItems]=useState([]);
@@ -52,16 +53,12 @@ function App() {
       setCartItems([]);
     }
 
-    const [newdata,setNewdata]=useState([]);
-    useEffect(()=>{
-      Axios.get("http://localhost:8080/postItem").then((result)=>{
-        result.json().then((resp)=>{
-          console.log("new data result",resp);
-          setNewdata(resp);
-        })
-      }).catch(e=>{
-        console.log(e)
-      })
+    const [newdata,setNewdata]=useState();
+  
+    useEffect(() => {
+      fetch("http://localhost:8080/postItem")
+            .then((response) => response.json())
+            .then((data) => setNewdata(data));
     },[])
     console.log("data from postman",newdata);
   return (
@@ -70,7 +67,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navbar2 cartItems={cartItems} />}>
           <Route index element={<Home />} />
-          <Route path="products" element={<Products productItems={productItems} handleAddProduct={handleAddProduct}/>} />
+          <Route path="products" element={<Products newdata={newdata} handleAddProduct={handleAddProduct}/>} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login/>} />
@@ -78,6 +75,9 @@ function App() {
           <Route path="*" element={<NoPage />} />
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
           <Route path="form" element={<Form/>} />
+          <Route path="admin" element={<AdminNav/>} />
+
+
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,4 +1,4 @@
-const {prod,User}=require("../model/prodserv.js");
+const {Prod,User}=require("../model/prodserv.js");
 // exports.getAllProdlist = async(req,res)=>
 // {
 //     try{
@@ -26,7 +26,7 @@ exports.AddProdSchema = async (req,res)=>
         const {name,liter,price,image} = req.body;
         console.log(req.body);
         console.log(name,liter,price,image)
-        await prod.create(req.body);
+        await Prod.create(req.body);
         
         
           
@@ -90,14 +90,14 @@ exports.AddProdSchema = async (req,res)=>
 exports.getProduct = async (req,res)=>{
   try{
     console.log("get product is working");
-    const all = await prod.find();
+    const all = await Prod.find();
     // res.json({ status: 'success' });
     // return console.log(allData);
     console.log(all);
     res.status(200).json(all)
   }
   catch(error){
-    console.log("karthi -> "+error);
+    console.log("product fetching error -> "+error);
   }
 }
 // exports.Updatetodo = async (req,res)=>

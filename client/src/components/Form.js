@@ -7,7 +7,6 @@ function Form() {
   const [name, setName] = useState("");
   const [liter, setLiter] = useState("");
   const [price, setPrice] = useState("");
-
   const [imageUrl, setImageurl] = useState("")
   const uploadImage = async () => {
     const files = document.getElementById("file-upload").files;
