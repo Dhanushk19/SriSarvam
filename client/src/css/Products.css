@@ -1,47 +1,66 @@
-.Products
-{
+.Products {
     background-color: #64f47c;
     text-align: center;
     margin-top: 2%;
     margin-left: 1%;
     margin-right: 1%;
-    padding:1%;
+    padding: 1%;
 }
 
-@media(max-width:767px){
-    .Products
-
-    {
+@media(max-width:767px) {
+    .Products {
         background-color: #64f47c;
         text-align: center;
         margin-top: 4%;
         margin-left: 3%;
         margin-right: 3%;
-        padding:2%;
+        padding: 2%;
     }
+
+    .allproducts
+    {
+        margin-top: 5%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
+.flexing {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: white;
+    flex-wrap: wrap;
     
 }
 
-.allproducts{
-    margin: 20px auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    background-color: #64f47c;
-    border-radius: white;
+.allproducts
+    {
+        margin-top: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+    }
+.allproducts img {
+    margin-left: 7%;
 }
-.card{
-    width: 300px;
-    height: 470px;
-    border:1px solid black;
+
+.card {
+    width: 280px;
+    height: 520px;
+    border: 1px solid black;
     border-radius: 5px;
     overflow: hidden;
-    padding: 10px;
-    margin: 40px 20px;
+    margin: 2% 2%;
     background-color: rgba(226, 237, 244, 0.815);
+
 }
-.product-image{
+
+.product-name {
+    margin-left: 10%;
+}
+
+/* .product-image{
     width: 100%;
     max-width: 150px;
     min-height: 100px;
@@ -57,22 +76,23 @@
     padding-bottom: 20px;
     font-size: 18px;
     line-height: 30px;
-}
-.product-add-button{
+} */
+.product-add-button {
     font-weight: 700;
     font-size: 18px;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     outline: none;
-    background-color: black;
+    background-color: #0b6e1c;
     color: white;
-    width: 100%;
+    width: 90%;
     height: 40px;
     display: block;
     cursor: pointer;
     text-transform: uppercase;
     margin: 15px auto;
 }
-.product-add-button:hover{
+
+.product-add-button:hover {
     background-color: #065e14;
 }

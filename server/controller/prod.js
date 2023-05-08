@@ -89,11 +89,11 @@ exports.AddProdSchema = async (req,res)=>
 
 exports.getProduct = async (req,res)=>{
   try{
-    console.log("get product is working");
+    // console.log("get product is working");
     const all = await Prod.find();
     // res.json({ status: 'success' });
     // return console.log(allData);
-    console.log(all);
+    
     res.status(200).json(all)
   }
   catch(error){
