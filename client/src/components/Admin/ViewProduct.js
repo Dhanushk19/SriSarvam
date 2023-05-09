@@ -8,23 +8,32 @@ import PreLoader from "../PreLoader";
 
 function ViewProduct() {
     const [sell, setSell] = useState([]);
-    const[price,setPrice]=useState("");
+    const [price, setPrice] = useState("");
 
     Axios.get("http://localhost:8080/postItem", {
     }).then((res) => {
         const data = res.data
         setSell(data);
     });
-    const handleDelete =async (e,id)=>{
+    const handleDelete = async (e, id) => {
         e.preventDefault()
         alert("Do you want to delete the product");
         console.log(id);
         await Axios.delete(`http://localhost:8080/deleteprod/${id}`);
-      }
+    }
+    const handleUpdate = async (e, id) => {
+        e.preventDefault()
+        if (window.confirm("Do you want update the product") == true) {
+            console.log(id);
+            console.log(price);
+            await Axios.put(`http://localhost:8080/update/${id}`,{price:price});
+        }
 
-    
+    }
+
+
     const Body = sell.map((val, key) => {
-        
+
         return (
 
             <div className="allproducts">
@@ -35,12 +44,12 @@ function ViewProduct() {
                     <h5 className="product-name"><b>Price :</b>Rs. {val.price}</h5>
                     <h5 className="product-name"><b>Liter :</b> {val.liter}</h5>
                     <form class="form-inline"   >
-                    <div class="form-group">
-                    <input type="text" class="form-control" id="price" placeholder="Enter New Price" onChange={(e)=>{setPrice(e.target.value)}}/>
-                    </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="price" placeholder="Enter New Price" onChange={(e) => { setPrice(e.target.value) }} />
+                        </div>
                     </form>
                     <div className="update-delete-button">
-                        <button className="product-add-buttons" >Update</button>
+                        <button className="product-add-buttons" onClick={(e) => handleUpdate(e, val._id)}>Update</button>
                         <button className="product-add-buttonss" onClick={(e) => handleDelete(e, val._id)}>Delete</button>
                     </div>
                 </div>
@@ -57,7 +66,7 @@ function ViewProduct() {
     return (
         <>
             <AdminNav />
-            <PreLoader/>
+            <PreLoader />
             <h4 className="Products"><i class="fa-solid fa-droplet"></i>&nbsp; Products</h4>
             <div className="flexing">{Body}</div>
             <div className="backimg2">

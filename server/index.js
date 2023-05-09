@@ -42,6 +42,24 @@ app.post("/uploads",async (req,res)=>{
      }
  });
  
+ app.put('/update/:id', async(req,res)=>
+ {
+     try {
+         let id=req.params.id;
+         await Prod.findByIdAndUpdate(id,req.body);
+         console.log(req.body);
+         res.status(200).json(
+             {
+                 msg:'Updated'
+             }
+         )
+     }
+     catch (err) {
+         return res.status(500).json({
+             msg:'Server interval error'
+         })
+     }
+ });
 
 
 app.post('/register',UserSignup);
