@@ -69,19 +69,22 @@ function Header(props) {
                                 <div class="modal-body">
 
                                     <div class="modal-line">
-                                    <i class="fa fa-home" aria-hidden="true"></i><a href="/">Home</a>
+                                    <i class="fa fa-home" aria-hidden="true"></i><NavLink to="/">Home</NavLink>
                                     </div>
 
                                     <div class="modal-line">
-                                    <i class="fa-solid fa-droplet"></i> <a href="/products">Products</a>
+                                    <i class="fa-solid fa-droplet"></i> <NavLink to="/products">Products</NavLink>
                                     </div>
 
                                     <div class="modal-line">
-                                    <i class="fa-solid fa-phone"></i> <a href="/contact">Contact</a>
+                                    <i class="fa-solid fa-phone"></i> <NavLink to="/contact">Contact</NavLink>
                                     </div>
 
                                     <div class="modal-line">
-                                    <i class="fa-solid fa-circle-info"></i> <a href="/about">About</a>
+                                    <i class="fa-solid fa-circle-info"></i> <NavLink to="/about">About</NavLink>
+                                    </div>
+                                    <div class="modal-line">
+                                    <i class="fas fa-shopping-cart"></i> <NavLink to="/cart">Cart</NavLink>
                                     </div>
 
                                     <a href="/login" class="navb-button" type="button">Login</a>

@@ -107,16 +107,19 @@
     .cart-items-list{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding-top: 20px;
-        padding-left: 10px;
+       justify-content:space-between;
+        padding-top: 10px;
+        padding-left: 0px;
         padding-bottom: 10px;
         font-size: 20px;
         font-weight: 700;
-        margin-left: 5%;
+        margin-left: 0%;
     }
     .cart-items{
         margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+       justify-content:space-between;
         width: 90%;
         background-color: rgba(226, 237, 244, 0.815) ;
         border: 2px ;
