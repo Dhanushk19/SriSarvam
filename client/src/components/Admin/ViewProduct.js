@@ -1,9 +1,24 @@
+import react,{ useState } from "react";
 import "../../css/viewproduct.css";
 import AdminNav from "./AdminNav";
+import axios from "axios";
 const ViewProducts=(props)=>
 
 {
+    const[price,setPrice]=useState("");
     console.log("item fetched in product",props.newdata);
+    const handleDelete =async (e,id)=>{
+        e.preventDefault()
+        alert("Do you want to delete the product");
+        console.log(id);
+        await axios.delete(`http://localhost:8080/deleteprod/${id}`);
+      }
+
+    const updateUser=(e)=>{
+        e.preventDefault();
+        let rate={price};
+        console.log("new price--->",rate);
+    }
     return(
         <>
         <AdminNav/>
@@ -12,7 +27,6 @@ const ViewProducts=(props)=>
             {props.newdata.map((productItem)=>(
                 <div className="cards">
                     <div>
-                        {console.log("data"+productItem.image)}
                         <img className="product-images" src={productItem.image} alt={productItem.name}/>
                     </div>
                     <div>
@@ -24,14 +38,14 @@ const ViewProducts=(props)=>
                     <div className="product-prices">${productItem.price}</div>
                     <form class="form-inline"   >
                     <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="$" name="email"/>
+                    <input type="number" class="form-control" id="price" placeholder="$" onChange={(e)=>{setPrice(e.target.value)}}/>
+                    </div>
+                    <div className="update-delete-button">
+                        <button className="product-add-buttons" onClick={()=>updateUser}>Update</button>
+                        <button className="product-add-buttonss" onClick={(e)=>handleDelete(e,productItem._id)}>Delete</button>
                     </div>
                     </form>
-                    <div className="update-delete-button">
-                        <button className="product-add-buttons" onClick={()=>props.handleAddProduct(productItem)}>Update</button>
-                        <button className="product-add-buttonss" onClick={()=>props.handleAddProduct(productItem)}>Delete</button>
-
-                    </div>
+                    
                 </div>
 
             ))}

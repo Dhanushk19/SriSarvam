@@ -31,7 +31,7 @@ export default class Admin extends Component {
         //   console.log(data, "userRegister");
           if (data.status == "ok") {
             // window.localStorage.setItem("token", data.data);
-            window.location.href = "./AdminNav";
+            window.location.href = "./addproduct";
             alert("login successfull");
           }
           if(data.error==="User"){

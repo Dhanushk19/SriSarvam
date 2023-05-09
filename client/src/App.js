@@ -18,6 +18,7 @@ import AdminLogin from "./components/Admin/AdminLogin";
 import AdminNav from "./components/Admin/AdminNav";
 import ViewProducts from "./components/Admin/ViewProduct";
 import Order from "./components/Admin/Order";
+import AddProduct from "./components/Admin/AddProduct";
 
 function App() {
   const {productItems}=data;
@@ -83,6 +84,7 @@ function App() {
           <Route path="adminNav" element={<AdminNav/>}/>
           <Route path="viewproduct" element={<ViewProducts newdata={newdata}/>}/>
           <Route path="order" element={<Order/>}/> 
+          <Route path="addproduct" element={<AddProduct/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

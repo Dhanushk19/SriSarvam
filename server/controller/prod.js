@@ -188,3 +188,18 @@ exports.UserLogin=async(req,res)=> {
   }
   res.json({ status: "error", error: "InvAlid Password" });
 }
+
+
+
+exports.DeleteProduct=async(req,res)=>{
+  try{
+    console.log(req.params.id);
+  const all = await Prod.findByIdAndDelete(req.params.id);
+  console.log(id);
+  res.status(200).json(all)
+  return res.json({status: "ok" });
+  }
+  catch(error){
+    console.log("id not deleting ->"+error);
+  }
+}

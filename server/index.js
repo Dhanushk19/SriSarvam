@@ -4,7 +4,7 @@ const app = express();
 const {Prod}=require('./model/prodserv.js');
 const cors = require('cors');
 const connection = require('./config/db.js');
-const {UserSignup,UserLogin,AddProdSchema,getProduct,AdminInfo}=require('./controller/prod.js')
+const {UserSignup,UserLogin,AddProdSchema,getProduct,AdminInfo,DeleteProduct}=require('./controller/prod.js')
 const myParser = require("body-parser");
 app.use(myParser.json({limit: '200mb'}));
 app.use(myParser.urlencoded({limit: '200mb', extended: true}));
@@ -58,7 +58,7 @@ app.post('/register',UserSignup);
 app.post('/login-user',UserLogin);
 app.get('/postItem',AddProdSchema);
 app.post('/adminLogin',AdminInfo);
-
+app.delete('/deleteprod/:id',DeleteProduct);
 
 
 
