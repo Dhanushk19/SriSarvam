@@ -12,11 +12,12 @@ import natprod from "../assets/natprod.jpg";
 import logo1 from "../assets/logo1b.png";
 import ScrollToTop from "../components/top.js";
 import PreLoader from "../components/PerLoader";
-
+// import Header from "../components/Navbar1"
 function Home() {
   return (
     <>
     <PreLoader/>
+    {/* <Header/> */}
       <h4 className="home"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Home</h4>
       <div className="backimg1">      
       <h6 className="compname">

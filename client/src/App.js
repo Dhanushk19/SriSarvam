@@ -77,15 +77,15 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<SignUp/>} />
-          <Route path="*" element={<NoPage />} />
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
+          <Route path="*" element={<NoPage />} />
+        </Route>
           <Route path="form" element={<Form/>} />
           <Route path="admin" element={<AdminLogin/>}/>
           <Route path="adminNav" element={<AdminNav/>}/>
           <Route path="viewproduct" element={<ViewProducts newdata={newdata}/>}/>
           <Route path="order" element={<Order/>}/> 
           <Route path="addproduct" element={<AddProduct/>}/>
-        </Route>
       </Routes>
     </BrowserRouter>
     
