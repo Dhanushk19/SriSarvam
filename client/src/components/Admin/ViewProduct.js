@@ -17,9 +17,11 @@ function ViewProduct() {
     });
     const handleDelete = async (e, id) => {
         e.preventDefault()
-        alert("Do you want to delete the product");
+        if (window.confirm("Do you want to delete the product") == true) {
+        // alert("Do you want to delete the prod uct");
         console.log(id);
         await Axios.delete(`http://localhost:8080/deleteprod/${id}`);
+        }
     }
     const handleUpdate = async (e, id) => {
         e.preventDefault()
