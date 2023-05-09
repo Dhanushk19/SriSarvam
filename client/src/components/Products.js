@@ -45,7 +45,7 @@ function Products(props){
     
     return(
         <>
-        <PreLoader/>
+        {/* <PreLoader/> */}
         <h4 className="Products"><i class="fa-solid fa-droplet"></i>&nbsp; Products</h4>
         
         <div className="flexing">{Body}</div>

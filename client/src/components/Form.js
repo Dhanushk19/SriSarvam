@@ -45,7 +45,7 @@ function Form() {
   return (
     <>
       <AdminNav/>
-      <h2>Add New Product</h2>
+      <h2 className="h2tag">Add New Product</h2>
         <div className="maindiv">
             <div className="container mt-3">
             <form  onSubmit={e=>create(e)} >
