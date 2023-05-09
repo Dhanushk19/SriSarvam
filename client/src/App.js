@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Axios from "axios";
+
 import Navbar2 from "./components/Navbar1";
 import Home from "../src/components/Home";
 import Products from "./components/Products";
@@ -16,7 +16,7 @@ import "./index.css";
 import "./App.css";
 import AdminNav from "./components/Admin/AdminNav";
 function App() {
-  const {productItems}=data;
+  
   const [cartItems,setCartItems]=useState([]);
 
   const handleAddProduct=(product)=>{
@@ -24,7 +24,7 @@ function App() {
     if(ProductExist){
       setCartItems(
         cartItems.map((item)=>
-        item.id==product.id
+        item.id===product.id
           ?{ ...ProductExist, quantity:ProductExist.quantity+1}
           :item
         )
@@ -41,7 +41,7 @@ function App() {
       }else{
         setCartItems(
         cartItems.map((item)=>
-          item.id==product.id
+          item.id===product.id
           ? { ...ProductExist,quantity:ProductExist.quantity-1}:item
         )
 
@@ -76,8 +76,6 @@ function App() {
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
           <Route path="form" element={<Form/>} />
           <Route path="admin" element={<AdminNav/>} />
-
-
         </Route>
       </Routes>
     </BrowserRouter>
