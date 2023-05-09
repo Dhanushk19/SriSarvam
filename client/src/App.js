@@ -14,7 +14,12 @@ import Cart from './components/Cart';
 import Form from "./components/Form";
 import "./index.css";
 import "./App.css";
+import AdminLogin from "./components/Admin/AdminLogin";
 import AdminNav from "./components/Admin/AdminNav";
+import ViewProducts from "./components/Admin/ViewProduct";
+import Order from "./components/Admin/Order";
+import AddProduct from "./components/Admin/AddProduct";
+
 function App() {
   
   const [cartItems,setCartItems]=useState([]);
@@ -72,11 +77,18 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<SignUp/>} />
-          <Route path="*" element={<NoPage />} />
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
-          <Route path="form" element={<Form/>} />
-          <Route path="admin" element={<AdminNav/>} />
+          <Route path="*" element={<NoPage />} />
         </Route>
+          <Route path="form" element={<Form/>} />
+          <Route path="admin" element={<AdminLogin/>}/>
+          <Route path="adminNav" element={<AdminNav/>}/>
+          <Route path="viewproduct" element={<ViewProducts newdata={newdata}/>}/>
+          <Route path="order" element={<Order/>}/> 
+          <Route path="addproduct" element={<AddProduct/>}/>
+
+
+        
       </Routes>
     </BrowserRouter>
     

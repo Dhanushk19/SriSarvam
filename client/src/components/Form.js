@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/form.css";
 import Axios from "axios";
+import AdminNav from "./Admin/AdminNav";
 const url = "http://localhost:8080/uploads";
 function Form() {
   const [name, setName] = useState("");
@@ -43,27 +44,28 @@ function Form() {
 
   return (
     <>
-      <h2>Add New Oil</h2>
+      <AdminNav/>
+      <h2>Add New Product</h2>
         <div className="maindiv">
-            <div className="container mt-3">
+            <div class="container mt-3">
             <form  onSubmit={e=>create(e)} >
-                <div className="mb-3 mt-3 ss__control">
+                <div class="mb-3 mt-3">
                 <label for="name">Name:</label>
-                <input type="text" className="form-control" id="name" placeholder="Enter name of oil" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
+                <input type="text" class="form-control" id="name" placeholder="Enter name of oil" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
                 </div>
-                <div className="mb-3 mt-3 ss__control">
+                <div class="mb-3 mt-3">
                 <label for="liter">Liter:</label>
-                <input type="text" className="form-control" id="liter" placeholder="Enter Quantity with ml or liter" name="liter" value={liter} onChange={(e)=>{setLiter(e.target.value)}}/>
+                <input type="number" class="form-control" id="liter" placeholder="Enter capacity" name="liter" value={liter} onChange={(e)=>{setLiter(e.target.value)}}/>
                 </div>
-                <div className="mb-3 mt-3 ss__control">
+                <div class="mb-3 mt-3">
                 <label for="price">Price:</label>
-                <input type="number" className="form-control" id="price" placeholder="Enter price in Rs" name="price" value={price} onChange={(e)=>{setPrice(e.target.value)}}/>
+                <input type="number" class="form-control" id="price" placeholder="Enter price" name="price" value={price} onChange={(e)=>{setPrice(e.target.value)}}/>
                 </div>
-                <div className="mb-3 mt-3 ss__control">
+                <div class="mb-3 mt-3">
                 <label for="image">Image:</label>
-                <input type="file" className="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  />
+                <input type="file" class="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  />
                 </div>
-                <button type="submit" className="btn btn-primary ss__actions ">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>
