@@ -2,7 +2,19 @@ import React from "react";
 import "../../css/Navbar1.css";
 import { NavLink, Outlet } from "react-router-dom";
 import logo1 from "../../assets/logo1b.png";
+import { useNavigate } from "react-router";
+import { useUserAuth } from "../UserAuthContext";
 export default function AdminNav(){
+    const { logOut, user } = useUserAuth();
+    const navigate = useNavigate();
+    const handleLogout = async () => {
+      try {
+        await logOut();
+        navigate("/");
+      } catch (error) {
+        // console.log(error.message);
+      }
+    };  
     return(
         <>
         <header>
@@ -24,6 +36,9 @@ export default function AdminNav(){
 
                 <div class="item">
                     <NavLink to="/order" >Orders</NavLink>
+                </div>
+                <div className="item1" style={{marginLeft:"50px"}}>
+                <button type="button" className="btn btn-danger" onClick={handleLogout} style={{fontSize:"20px",paddingLeft:"20px",paddingRight:"20px"}}>Logout</button>
                 </div>
             </div>
 
@@ -48,22 +63,20 @@ export default function AdminNav(){
                                 <div class="modal-body">
 
                                     <div class="modal-line">
-                                    <i class="fa fa-home" aria-hidden="true"></i><a href="/">Home</a>
+                                    <i class="fa fa-plus" aria-hidden="true"></i><a href="/form">Add Product</a>
                                     </div>
 
                                     <div class="modal-line">
-                                    <i class="fa-solid fa-droplet"></i> <a href="/products">Products</a>
+                                    <i class="fa-solid fa-droplet"></i> <a href="/viewproducts">View Products</a>
                                     </div>
 
                                     <div class="modal-line">
-                                    <i class="fa-solid fa-phone"></i> <a href="/contact">Contact</a>
+                                    <i class="fa-solid fa-phone"></i> <a href="/orders">Orders</a>
                                     </div>
 
-                                    <div class="modal-line">
-                                    <i class="fa-solid fa-circle-info"></i> <a href="/about">About</a>
-                                    </div>
+                                    
 
-                                    <a href="/login" class="navb-button" type="button">Login</a>
+                                    <a href="/" class="navb-button" type="button" onClick={handleLogout}>Logout</a>
                                 </div>
 
                                 
