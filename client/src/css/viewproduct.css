@@ -22,16 +22,8 @@
     
 } */
 
-.allproductss{
-    margin: 20px auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    background-color: #64f47c;
-    border-radius: white;
-}
-.cards{
+
+/* /* .card{
     width: 300px;
     height: 470px;
     border:1px solid black;
@@ -40,7 +32,19 @@
     padding: 10px;
     margin: 40px 20px;
     background-color: rgba(226, 237, 244, 0.815);
+} */
+
+.card {
+    width: 280px;
+    height: 570px;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 2% 2%;
+    background-color: rgba(226, 237, 244, 0.815);
+
 }
+
 .product-images{
     width: 100%;
     max-width: 150px;
@@ -57,14 +61,14 @@
     padding-bottom: 20px;
     font-size: 18px;
     line-height: 30px;
-}
+} 
 .product-add-buttons{
     font-weight: 700;
     font-size: 18px;
     border-radius: 30px;
     border: none;
     outline: none;
-    background-color: black;
+    background-color: rgb(235, 173, 57);
     color: white;
     width: 40%;
     height: 40px;
@@ -74,10 +78,11 @@
     margin-left: 15px;
 }
 .product-add-buttons:hover{
-    background-color: #065e14;
+    background-color: #29065e;
 }
 .update-delete-button{
     display: inline;
+    margin-bottom: 4%;
     /* white-space: 10px; */
 }
 .product-add-buttonss{
@@ -86,7 +91,7 @@
     border-radius: 30px;
     border: none;
     outline: none;
-    background-color: black;
+    background-color: rgb(244, 54, 54);
     color: white;
     width: 40%;
     height: 40px;
@@ -94,7 +99,8 @@
     text-transform: uppercase;
     margin: 5px auto;
     margin-left: 15px;
+    
 }
 .product-add-buttonss:hover{
-    background-color: #065e14;
+    background-color: #29065e;
 }

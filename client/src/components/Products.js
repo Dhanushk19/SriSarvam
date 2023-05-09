@@ -3,24 +3,30 @@ import React,{useState} from "react";
 import Axios from "axios";
 import logo1 from "../assets/logo1b.png";
 import ScrollToTop from "../components/top.js";
+import PreLoader from "./PreLoader";
+
 function Products(props){
+    
     const [sell, setSell] = useState([]);
+
 
     Axios.get("http://localhost:8080/postItem", {
 
     }).then((res) => {
+         
         const data = res.data
         setSell(data);
+ 
 
 
     });
     const Body = sell.map((val, key) => {
 
         return (
-
+            
             <div className="allproducts">
                 <div className="card" key={key} >
-                    <img src={val.image} alt="petp" width="80%" height="130%"></img>
+                <img src={val.image} alt="petp" width="80%" height="130%" ></img> 
                     <hr></hr>
                     <h5 className="product-name"><b>Name :</b> {val.name}</h5>
                     <h5 className="product-name"><b>Price :</b>Rs. {val.price}</h5>
@@ -39,9 +45,12 @@ function Products(props){
     
     return(
         <>
-       
+        <PreLoader/>
         <h4 className="Products"><i class="fa-solid fa-droplet"></i>&nbsp; Products</h4>
+        
         <div className="flexing">{Body}</div>
+        
+        
         <div className="backimg2">
       <div className="compdetails text-center">
         <img src={logo1} alt="compname" className="comname"></img>
@@ -61,6 +70,7 @@ function Products(props){
         </div>
       </div>
       </div>
+      
       
         <ScrollToTop/>
         </>

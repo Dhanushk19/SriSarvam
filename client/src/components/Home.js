@@ -11,7 +11,7 @@ import adultfree from "../assets/adulterationfree.png";
 import natprod from "../assets/natprod.jpg";
 import logo1 from "../assets/logo1b.png";
 import ScrollToTop from "../components/top.js";
-import PreLoader from "../components/PerLoader";
+import PreLoader from "./PreLoader";
 // import Header from "../components/Navbar1"
 function Home() {
   return (
@@ -21,7 +21,7 @@ function Home() {
       <h4 className="home"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Home</h4>
       <div className="backimg1">      
       <h6 className="compname">
-        <img className="imgstyling" src={logo1}></img>
+        <img className="imgstyling" src={logo1} alt="logo"></img>
       </h6>
       <Carousel className="caromod">
         <Carousel.Item>
@@ -166,7 +166,7 @@ function Home() {
     <div className="backimg3">
       <div class="row" id="info" >
         <div class="col-sm-3">
-          <div class="card">
+          <div class="card3">
             <div class="card-body">
               <img src={sunFil} alt="SunLight Filteration" className="sun" />
               <h5 class="card-title" >Sunlight Filteration</h5>
@@ -175,7 +175,7 @@ function Home() {
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card">
+          <div class="card3">
             <div class="card-body">
               <img src={noprev} alt="No Preservatives" className="sun" />
               <h5 class="card-title">No Preservatives</h5>
@@ -184,7 +184,7 @@ function Home() {
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card">
+          <div class="card3">
             <div class="card-body">
               <img src={adultfree} alt="Adulteration Free" className="sun" />
               <h5 class="card-title">Adulteration Free</h5>
@@ -193,7 +193,7 @@ function Home() {
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card">
+          <div class="card3">
             <div class="card-body">
               <img src={natprod} alt="Natural Product" className="sun" />
               <h5 class="card-title">No Chemicals</h5>

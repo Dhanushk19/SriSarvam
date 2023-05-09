@@ -1,6 +1,5 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Navbar2 from "./components/Navbar1";
 import Home from "../src/components/Home";
 import Products from "./components/Products";
@@ -57,22 +56,18 @@ function App() {
     const handleCartClearance=()=>{
       setCartItems([]);
     }
+    
 
-    const [newdata,setNewdata]=useState();
-  
-    useEffect(() => {
-      fetch("http://localhost:8080/postItem")
-            .then((response) => response.json())
-            .then((data) => setNewdata(data));
-    },[])
-    console.log("data from postman",newdata);
+
+
+    
   return (
     <>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navbar2 cartItems={cartItems} />}>
           <Route index element={<Home />} />
-          <Route path="products" element={<Products newdata={newdata} handleAddProduct={handleAddProduct}/>} />
+          <Route path="products" element={<Products  handleAddProduct={handleAddProduct}/>} loading />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login/>} />
@@ -83,7 +78,7 @@ function App() {
           <Route path="form" element={<Form/>} />
           <Route path="admin" element={<AdminLogin/>}/>
           <Route path="adminNav" element={<AdminNav/>}/>
-          <Route path="viewproduct" element={<ViewProducts newdata={newdata}/>}/>
+          <Route path="viewproduct" element={<ViewProducts />}/>
           <Route path="order" element={<Order/>}/> 
           <Route path="addproduct" element={<AddProduct/>}/>
 

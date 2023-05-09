@@ -30,10 +30,10 @@ function Form() {
 
 
   }
-  const create = (e) => {
+  const create = async(e) => {
     e.preventDefault();
   console.log("dfyygh")
-    uploadImage();
+    await uploadImage();
     Axios.post(url, {
       name: name,
       liter: liter,
@@ -47,25 +47,25 @@ function Form() {
       <AdminNav/>
       <h2>Add New Product</h2>
         <div className="maindiv">
-            <div class="container mt-3">
+            <div className="container mt-3">
             <form  onSubmit={e=>create(e)} >
-                <div class="mb-3 mt-3">
+            <div className="mb-3 mt-3 ss__control">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name of oil" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
+                <input type="text" className="form-control" id="name" placeholder="Enter name of oil" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
                 </div>
-                <div class="mb-3 mt-3">
+                <div className="mb-3 mt-3 ss__control">
                 <label for="liter">Liter:</label>
-                <input type="number" class="form-control" id="liter" placeholder="Enter capacity" name="liter" value={liter} onChange={(e)=>{setLiter(e.target.value)}}/>
+                <input type="text" className="form-control" id="liter" placeholder="Enter Quantity with ml or liter" name="liter" value={liter} onChange={(e)=>{setLiter(e.target.value)}}/>
                 </div>
-                <div class="mb-3 mt-3">
+                <div className="mb-3 mt-3  ss__control">
                 <label for="price">Price:</label>
-                <input type="number" class="form-control" id="price" placeholder="Enter price" name="price" value={price} onChange={(e)=>{setPrice(e.target.value)}}/>
+                <input type="number" className="form-control" id="price" placeholder="Enter price" name="price" value={price} onChange={(e)=>{setPrice(e.target.value)}}/>
                 </div>
-                <div class="mb-3 mt-3">
+                <div className="mb-3 mt-3  ss__control">
                 <label for="image">Image:</label>
-                <input type="file" class="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  />
+                <input type="file" className="form-control" id="file-upload" accept=".jpeg, .png ,.jpg"  name="image"  />
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary  ss__control">Submit</button>
             </form>
             </div>
         </div>

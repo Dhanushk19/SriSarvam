@@ -4,7 +4,7 @@ const app = express();
 const {Prod}=require('./model/prodserv.js');
 const cors = require('cors');
 const connection = require('./config/db.js');
-const {UserSignup,UserLogin,AddProdSchema,getProduct,AdminInfo,DeleteProduct}=require('./controller/prod.js')
+const {UserSignup,UserLogin,AdminInfo,DeleteProduct}=require('./controller/prod.js')
 const myParser = require("body-parser");
 app.use(myParser.json({limit: '200mb'}));
 app.use(myParser.urlencoded({limit: '200mb', extended: true}));
@@ -16,7 +16,6 @@ app.use(cors());
 
 
 
-app.get('/postItem',getProduct);
 
 app.post("/uploads",async (req,res)=>{
     console.log(req.body);
@@ -44,24 +43,22 @@ app.post("/uploads",async (req,res)=>{
  });
  
 
-// app.post('/postoil',(req,res)=>{
-//     let newitem=req.body;
-//     console.log(newitem);
-//     res.send('created');
-// })
-// app.get('/postoil',(req,res)=>{
-//     res.send(req.body);
-//     console.log(req.body);
-// })
 
 app.post('/register',UserSignup);
 app.post('/login-user',UserLogin);
-app.get('/postItem',AddProdSchema);
 app.post('/adminLogin',AdminInfo);
 app.delete('/deleteprod/:id',DeleteProduct);
 
 
+app.get("/postItem",async (req,res)=>{
+    Prod.find({}).then(function(result){
+    
+       res.json(result);
+    
+      })
+  
 
+})
 
 const port = process.env.PORT || 8080 ;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
