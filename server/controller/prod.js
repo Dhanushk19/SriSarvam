@@ -141,11 +141,13 @@ exports.UserSignup=async(req,res)=>{
     if (oldUser) {
       return res.json({ error: "User Exists" });
     }
-
-    await User.create({
+    else{
+      await User.create({
       email,
       password,
     });
+    }
+    
     res.send({ status: "ok" });
   } catch (error) {
     res.send({ status: "error",error: "error" });
@@ -153,24 +155,20 @@ exports.UserSignup=async(req,res)=>{
 }
 
 exports.UserLogin=async(req,res)=> {
-  const { email, password } = req.body;
+  
+  try {
+      const existinguser = await User.findOne({ ...req.body })
+      if (!existinguser) {
+          console.log("User not found...");
+          return res.status(404).json({ message: "User not found..." })
+      }
+      console.log(existinguser);
+      res.status(200).json({ result: existinguser })
 
-  const user = await User.findOne({ email });
-  console.log(user);
-  if (!user) {
-    return res.json({ error: "email not match" });
+  } catch (err) {
+      console.log(err.message)
+      res.status(500).json(err.message)
   }
-  // console.log(compare(password, User.password));
-  if (true) {
-    // const token = jwt.sign({ id: user.id }, JWT_SECRET);
-
-    if (res.status(201)) {
-      return res.json({ status: "ok"});
-    } else {
-      return res.json({ error: "error" });
-    }
-  }
-  res.json({ status: "error", error: "Invalid Password" });
 }
 
 exports.DeleteProduct=async(req,res)=>{

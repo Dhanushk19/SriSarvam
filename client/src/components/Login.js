@@ -1,87 +1,73 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../css/Login.css";
-export default class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
+import {Link} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import Axios from "axios";
+
+function Login () {
+  
+  const [email, setemail] = useState()
+  const [password, setpassword] = useState()
+  const navigate = useNavigate();
+
+  
+
+const handlesubmit = async (e) => {
+  e.preventDefault();
+  if ( email !== '' && password !== '') {
+      const user1 = {        
+          email: email,
+          password: password
+      }
+      console.log(user1)
+      const res = await Axios.post('/login-user', user1);
+      localStorage.setItem("user1", JSON.stringify(res.user1.result));
+      
+      if (res) {
+        navigate("/")
+      }
+
   }
-  handleSubmit(e) {
-    e.preventDefault();
-    const { email, password } = this.state;
-    console.log(email, password);
-    fetch("http://localhost:8080/login-user", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.error === "InvAlid Password") {
-          alert("password not match");
-        }
-        if (data.error === " email not match ") {
-          alert("email not match");
-        }
-        if (data.status === "ok") {
-          alert("login successful");
-          window.localStorage.setItem("token", data.data);
-          window.location.href = "./buyform";
-        }
-      });
+  else {
+      alert('Please check the values again!')
   }
-  render() {
+}
+  
     return (
       <>
-      <div class="container">
+     
 
 
-        <div class="login-content">
-          <form onSubmit={this.handleSubmit}>
+        <div className="maindiv">
+          <form onSubmit={handlesubmit}>
 
-            <h2 class="title">LOGIN</h2>
-            <div class="input-div one">
-              <div class="i">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="div">
-                
+            <h4 className="title">Login</h4>
+            <div className="container mt-3 mb-3">
+              <div className=" mt-3 mb-3 ss__controls">
+                <label for="name">Username :</label>
             
-                <input type="text" class="input" name="email" placeholder="Email Id or Phone Number" 
-                 onChange={(e) => this.setState({ email: e.target.value })}/>
+                <input type="text" id="name" name="email" placeholder="Email Id " size="40"  className="form-control"
+                 onChange={(e) => setemail({ email: e.target.value })}/>
               </div>
-            </div>
-            <div class="input-div pass">
-              <div class="i">
-                <i class="fas fa-lock"></i>
+            
+           
+             
+              <div className="mt-3 mb-3 ss__controls">
+              <label for="pass">Password :</label>
+                <input type="password" id="pass" name="password" placeholder="Password" className="form-control"
+                 onChange={(e) => setpassword({ password: e.target.value })}/>
               </div>
-              <div class="div">
-                
-                <input type="password" class="input" name="password" placeholder="Password" id="myInput"
-                 onChange={(e) => this.setState({ password: e.target.value })}/>
-              </div>
-            </div>
+            
             {/* <a  href="/signup" className="anc">Forgot Password?</a> */}
-            <input type="submit" class="btn" value="Login" />
+            <Link to='/'><input type="submit" className="btn btn-primary ss__control  mb-3" value="Login" onClick={handlesubmit} /></Link>
             <h5>Don't Have an Account ?</h5>
-            <a  href="/signup"  className="signuplink">Sign Up</a>
+            <a  href="/signup"  className="signuplink mt-3 mb-3">Sign Up</a>
+            </div>
           </form>
         </div>
 
-        </div>
+        
       </>
     );
   }
-}
+  export default Login;

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import {
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
@@ -14,7 +15,9 @@ export function UserAuthContextProvider({ children }) {
   function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
   }
-  
+  function signUp(email, password) {
+    return createUserWithEmailAndPassword(auth, email, password);
+  }
   function logOut() {
     return signOut(auth);
   }
@@ -32,7 +35,7 @@ export function UserAuthContextProvider({ children }) {
 
   return (
     <userAuthContext.Provider
-      value={{ user, logIn, logOut,  }}
+      value={{ user, logIn, signUp, logOut,  }}
     >
       {children}
     </userAuthContext.Provider>
