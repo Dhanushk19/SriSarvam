@@ -1,14 +1,45 @@
-.form{
-    padding-top: 20px;
-    border: 2px solid black;
-    border-radius: 25px;
-    margin: 10% 20%;
+
+.maindiv1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    margin-left: 40%;
+    margin-top: 12%;
+    
 }
-h2{
+.ad_title{
+    text-align: center;
     font-weight: bold;
-    
+    font-size: 600;
+    padding-top: 20px;
+    font-family: 'Urbanist' !important;
 }
-label{
-    
-    font-size: larger;
+
+.ss__control label{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
 }
+
+.ss__control input
+{
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+}
+
+.ss__actions {
+    margin-top: 2%;
+  }
+
+  @media only screen and (max-width: 979px) 
+  {
+    .maindiv1{
+        margin-left: 0;
+    }
+  }

@@ -8,17 +8,16 @@ import About from "../src/components/About";
 import Login from "../src/components/Login";
 import NoPage from "../src/components/NoPage";
 import SignUp from "../src/components/Signup.js";
-import data from './components/Data';
 import Cart from './components/Cart';
 import Form from "./components/Form";
 import "./index.css";
 import "./App.css";
+import ProtectedRoute from "./components/ProtectedRoute.js";
+import { UserAuthContextProvider } from "./components/UserAuthContext";
 import AdminLogin from "./components/Admin/AdminLogin";
 import AdminNav from "./components/Admin/AdminNav";
 import ViewProducts from "./components/Admin/ViewProduct";
 import Order from "./components/Admin/Order";
-import AddProduct from "./components/Admin/AddProduct";
-
 function App() {
   
   const [cartItems,setCartItems]=useState([]);
@@ -64,6 +63,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <UserAuthContextProvider>
       <Routes>
         <Route path="/" element={<Navbar2 cartItems={cartItems} />}>
           <Route index element={<Home />} />
@@ -75,16 +75,17 @@ function App() {
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
           <Route path="*" element={<NoPage />} />
         </Route>
-          <Route path="form" element={<Form/>} />
+          <Route path="form" element={<ProtectedRoute><Form/></ProtectedRoute>} />
           <Route path="admin" element={<AdminLogin/>}/>
-          <Route path="adminNav" element={<AdminNav/>}/>
-          <Route path="viewproduct" element={<ViewProducts />}/>
-          <Route path="order" element={<Order/>}/> 
-          <Route path="addproduct" element={<AddProduct/>}/>
+          <Route path="adminNav" element={<ProtectedRoute><AdminNav/></ProtectedRoute>}/>
+          <Route path="viewproduct" element={<ProtectedRoute><ViewProducts/> </ProtectedRoute>}/>
+          <Route path="order" element={<ProtectedRoute><Order/></ProtectedRoute>}/> 
+          
 
 
         
       </Routes>
+      </UserAuthContextProvider>
     </BrowserRouter>
     
     </>
