@@ -9,7 +9,7 @@ function Form() {
   const [price, setPrice] = useState("");
   const [imageUrl, setImageurl] = useState("")
   const uploadImage = async () => {
-    const files = document.getElementById("file-upload").files;
+    const files = await document.getElementById("file-upload").files;
     console.log(files);
     const data = new FormData()
     data.append('file', files[0])
