@@ -32,9 +32,9 @@ function Form() {
   }
   const create = async(e) => {
     e.preventDefault();
-  console.log("dfyygh")
     await uploadImage();
-    Axios.post(url, {
+    console.log(imageUrl);
+    await Axios.post(url, {
       name: name,
       liter: liter,
       price: price,

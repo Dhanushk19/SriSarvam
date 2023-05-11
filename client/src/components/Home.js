@@ -12,6 +12,7 @@ import natprod from "../assets/natprod.jpg";
 import logo1 from "../assets/logo1b.png";
 import ScrollToTop from "../components/top.js";
 import PreLoader from "./PreLoader";
+import Whatsapp from "./Whatsapp";
 // import Header from "../components/Navbar1"
 function Home() {
   return (
@@ -223,7 +224,7 @@ function Home() {
         </div>
       </div>
       </div>
-      
+        <Whatsapp/>
         <ScrollToTop/>
     </>
   )

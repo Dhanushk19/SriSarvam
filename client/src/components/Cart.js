@@ -1,5 +1,8 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import "../css/cart.css";
+import Top from "./top.js";
+import Whatsapp from "./Whatsapp";
 
 const Cart=(props)=>{
     const TotalPrice=props.cartItems.reduce((price,item) => price + item.quantity * item.price,0);
@@ -40,8 +43,11 @@ const Cart=(props)=>{
                     Total price 
                     <div className="cart-items-total-price">&nbsp; Rs. {TotalPrice}</div>
             </div>
-            </div>
             
+            </div>
+            <Link to="/buyform" className="buy-button"><button className="btn btn-primary bt">Buy</button></Link>
+            <Whatsapp/>
+            <Top/>
         </>
 
     )

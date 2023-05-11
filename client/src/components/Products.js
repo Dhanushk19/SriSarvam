@@ -4,6 +4,7 @@ import Axios from "axios";
 import logo1 from "../assets/logo1b.png";
 import ScrollToTop from "../components/top.js";
 import PreLoader from "./PreLoader";
+import Whatsapp from "./Whatsapp";
 
 function Products(props){
     
@@ -45,7 +46,7 @@ function Products(props){
     
     return(
         <>
-        {/* <PreLoader/> */}
+        <PreLoader/>
         <h4 className="Products"><i class="fa-solid fa-droplet"></i>&nbsp; Products</h4>
         
         <div className="flexing">{Body}</div>
@@ -71,7 +72,7 @@ function Products(props){
       </div>
       </div>
       
-      
+        <Whatsapp/>
         <ScrollToTop/>
         </>
         

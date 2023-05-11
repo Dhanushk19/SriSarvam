@@ -3,6 +3,7 @@ import Typer from "./typical";
 import woodp from "../assets/woodp.jpg";
 import logo1 from "../assets/logo1b.png";
 import ScrollToTop from "../components/top.js";
+import Whatsapp from "./Whatsapp";
 function About() {
   return (
     <>
@@ -77,7 +78,7 @@ function About() {
       </div>
 
       </div>
-
+      <Whatsapp/>
       <ScrollToTop/>
 
         

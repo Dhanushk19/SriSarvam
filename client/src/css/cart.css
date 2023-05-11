@@ -101,7 +101,17 @@
 .clear-cart-button:hover{
     background-color: rgb(27, 9, 165);
 }
+.buy-button
+{
+    display: flex;
+    justify-content: center;
 
+}
+.bt
+{
+    padding-left: 1%;
+    padding-right: 1%;
+}
 @media only screen and (max-width: 979px) 
 {
     .cart-items-list{
