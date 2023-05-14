@@ -1,0 +1,36 @@
+.ss__control
+{
+    margin-left: 40%;
+    
+}
+
+.ss__control_button
+{
+    margin-top: 2%;
+}
+
+.title6
+{
+    margin-left: 7%;
+}
+
+
+@media(max-width:767px) {
+    .ss__control
+{
+    margin-left: 0%;
+    
+}
+
+.ss__control_button
+{
+    margin-top: 2%;
+}
+
+.title6
+{
+    margin-left: 0%;
+}
+
+
+}

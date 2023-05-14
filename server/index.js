@@ -105,6 +105,19 @@ app.get("/getOrder", async (req, res) => {
     })
 })
 
+app.get("/getuserOrder", async (req, res) => {
+    const email = req.body.email;
+    try {
+        const details = await BuyProd.find({ Email:email });
+        res.json(details);
+        console.log(details);
+        res.end()
+    }
+    catch (err) {
+        console.log(err);
+    }
+})
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 

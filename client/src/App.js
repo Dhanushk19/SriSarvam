@@ -19,7 +19,7 @@ import AdminNav from "./components/Admin/AdminNav";
 import ViewProducts from "./components/Admin/ViewProduct";
 import Order from "./components/Admin/Order";
 import BuyForm from "./components/BuyForm";
-import userorder  from "./components/userorder";
+import Userorder  from "./components/userorder";
 function App() {
   
   const [cartItems,setCartItems]=useState([]);
@@ -77,7 +77,7 @@ function App() {
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
           <Route path="*" element={<NoPage />} />
           <Route path="buyform" element={<BuyForm/>}/>
-          <Route path="userorder" element={<userorder/>}/>
+          <Route path="userorder" element={<Userorder/>}/>
         </Route>
           <Route path="form" element={<ProtectedRoute><Form/></ProtectedRoute>} />
           <Route path="admin" element={<AdminLogin/>}/>

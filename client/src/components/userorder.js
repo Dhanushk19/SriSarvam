@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import Axios from "axios";
-
- function Userorder() {
+import "../css/userOrder.css";
+function Userorder() {
     const [order, setOrder] = useState([]);
+   
+    const [email, setEmail] = useState("");
+    const [view, setView] = useState("");
+    const getProd = async (e) => {
+        e.preventDefault();
+        await Axios.get("http://localhost:8080/getuserOrder", {
+            Email: email
+        }).then((res) => {
 
-    Axios.get("http://localhost:8080/getOrder", {
+            const data = res.data
+            setView(data.email);
+            setOrder(data);
+            console.log(data.email);
+            console.log(data);
 
-    }).then((res) => {
-        const data = res.data
-        setOrder(data);
-        console.log(data);
-    });
+        });
+    }
+
+    
     const Body = order.map((val, key) => {
         return (
             <div className="allproducts1">
@@ -31,7 +42,26 @@ import Axios from "axios";
     return (
         <>
             <h4 className="Products"> Orders</h4>
-            <div className="flexing1">{Body}</div>
+            
+            <form onSubmit={e => getProd(e)}>
+                <div className="ss__control">
+                    <h5 className="title6">Enter your email Id</h5>
+                    <label for="emailid">Email</label>
+                    <input type="email" name="email" placeholder="Enter Email" className="form-control" id="emailid" onChange={(event) => { setEmail(event.target.value) }} />
+                    <button type="submit" className="btn btn-primary  ss__control_button">Submit</button>
+                </div>
+            </form>
+            {
+                view != null ?
+                    (
+                        <></>
+                    ) :
+                    (
+                        
+                            <div className="flexing1">{Body}</div>
+                    )
+            }
+            
         </>
     )
 }
