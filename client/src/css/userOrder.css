@@ -1,15 +1,25 @@
 .ss__control1
 {
-    margin-left: 40%;
+    margin-left: 43%;
     margin-right: 30%;
+    
     
 }
 
-
+.ss__control1 input{
+    margin-top: 4%;
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+}
 
 .ss__control1_button
 {
-    margin-top: 2%;
+    margin-top: 4%;
+    
 }
 
 .title6
@@ -24,10 +34,17 @@
     margin-left: 0%;
     
 }
+.ss__control1 input
+{
+    margin-top: 4%;
+    margin-left: 25%;
+}
 
 .ss__control1_button
 {
-    margin-top: 2%;
+    margin-top: 4%;
+    margin-left: 50%;
+    
 }
 
 .title6
