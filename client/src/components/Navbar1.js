@@ -51,10 +51,11 @@ function Header(props) {
                         <div class="item">
                             <NavLink to="/about" >About</NavLink>
                         </div>
-
-                        <div class="item-button">
-                            <a href="/login" type="button" >Login</a>
+                        <div class="item">
+                            <NavLink to="/order/" >Order</NavLink>
                         </div>
+
+                      
                         
                         <div class="item">
                             <NavLink to="/cart">
@@ -107,7 +108,7 @@ function Header(props) {
                                     </div>
                                     
 
-                                    <a href="/login" class="navb-button" type="button">Login</a>
+                                   
                                 </div>
 
                                 

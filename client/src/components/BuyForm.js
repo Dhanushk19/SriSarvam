@@ -7,11 +7,11 @@ export default function BuyForm(){
     const [address,setAddress] = useState("");
     const [city,setCity] = useState("");
     const [pincode,setPincode] = useState("");
-    const [status ,setStatus]= useState("");
+    const status="pending";
 
     const create=async (e)=>
     {
-        setStatus("Pending");
+       
         
         e.preventDefault();
         await Axios.post("http://localhost:8080/buyprod",
