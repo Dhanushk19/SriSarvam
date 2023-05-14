@@ -18,7 +18,7 @@ export default function Order() {
     });
     const handleUpdate = async (e, id) => {
         e.preventDefault()
-        if (window.confirm("Do you want update the product") == true) {
+        if (window.confirm("Do you want update the product") === true) {
             console.log(id);
             console.log(status);
             await Axios.put(`https://srisaravamoils.onrender.com/updatestatus/${id}`, { status: status });
@@ -27,7 +27,7 @@ export default function Order() {
     }
     const handleDelete = async (e, id) => {
         e.preventDefault()
-        if (window.confirm("Do you want to delete the product") == true) {
+        if (window.confirm("Do you want to delete the product") === true) {
             // alert("Do you want to delete the prod uct");
             console.log(id);
             await Axios.delete(`https://srisaravamoils.onrender.com/deletestat/${id}`);

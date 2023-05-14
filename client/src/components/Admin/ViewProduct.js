@@ -17,7 +17,7 @@ function ViewProduct() {
     });
     const handleDelete = async (e, id) => {
         e.preventDefault()
-        if (window.confirm("Do you want to delete the product") == true) {
+        if (window.confirm("Do you want to delete the product") === true) {
         // alert("Do you want to delete the prod uct");
         console.log(id);
         await Axios.delete(`https://srisaravamoils.onrender.com/deleteprod/${id}`);
@@ -25,7 +25,7 @@ function ViewProduct() {
     }
     const handleUpdate = async (e, id) => {
         e.preventDefault()
-        if (window.confirm("Do you want update the product") == true) {
+        if (window.confirm("Do you want update the product") === true) {
             console.log(id);
             console.log(price);
             await Axios.put(`https://srisaravamoils.onrender.com/update/${id}`,{price:price});

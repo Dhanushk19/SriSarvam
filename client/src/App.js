@@ -23,7 +23,7 @@ import Userorder  from "./components/userorder";
 function App() {
   
   const [cartItems,setCartItems]=useState([]);
-  const [final,setFinal]=useState([]);
+ 
   const handleAddProduct=(product)=>{
     alert("Product is add to the cart");
     const ProductExist=cartItems.find((item)=>item._id===product._id);
