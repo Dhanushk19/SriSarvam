@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import Axios from "axios";
-export default function BuyForm(){
+export default function BuyForm(props){
     const [name,setUName] = useState("");
     const [email,setEmail] = useState("");
     const [contactno,setContact] = useState("");
@@ -8,7 +8,8 @@ export default function BuyForm(){
     const [city,setCity] = useState("");
     const [pincode,setPincode] = useState("");
     const status="pending";
-
+    const pid=props.pids;
+    console.log("product id in buyform",pid);
     const create=async (e)=>
     {
        
@@ -23,7 +24,7 @@ export default function BuyForm(){
             city:city,
             pincode:pincode,
             status:status,
-
+            pid:pid,
         })
     }
     return(

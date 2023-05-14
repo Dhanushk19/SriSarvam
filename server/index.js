@@ -102,7 +102,7 @@ app.post("/buyprod", async (req, res) => {
             city: req.body.city,
             pincode: req.body.pincode,
             status:req.body.status,
-        
+            pid:req.body.pid,
         
         });
 

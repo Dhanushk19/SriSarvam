@@ -18,9 +18,9 @@ const AddProdSchema = new mongoose.Schema(
         contactno:Number,
         address:String,
         city:String,
-        pincode:Number,
+        pincode:String,
         status:String ,
-         
+        pid:String,
       })
   
       module.exports.BuyProd = mongoose.model('buyprods',BuyProdSchema);
