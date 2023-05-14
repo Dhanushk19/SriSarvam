@@ -1,28 +1,11 @@
-import React,{useEffect,useState} from "react"
+import React from "react"
 import { Outlet,NavLink } from "react-router-dom";
 import "../css/Navbar1.css";
 import logo1 from "../assets/logo1b.png";
-import { useNavigate } from "react-router";
+
 
 function Header(props) {
-    const [firstletter,setfirstletter] = useState('');
-    const navigate = useNavigate();
-    const getlocal = async ()=>{
-        const initial =  await JSON.parse( localStorage.getItem('user'));
-        setfirstletter(initial.name)
-        console.log("wde");
-    }
-
-    useEffect(()=>{
-        getlocal()
-    },[])
-
-    const logout=async()=>{
-        localStorage.clear();
-        setfirstletter(null);
-       navigate('/login')
-    }
-      
+    
 
     return (
         <>

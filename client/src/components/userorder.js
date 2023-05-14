@@ -8,7 +8,7 @@ function Userorder() {
     const [view, setView] = useState("");
     const getProd = async (e) => {
         e.preventDefault();
-        await Axios.get("http://localhost:8080/getuserOrder", {
+        await Axios.get("https://srisaravamoils.onrender.com/getuserOrder", {
             Email: email
         }).then((res) => {
 

@@ -6,7 +6,7 @@ export default function Order() {
     const [order, setOrder] = useState([]);
     const [status, setStatus] = useState("");
 
-    Axios.get("http://localhost:8080/getOrder", {
+    Axios.get("https://srisaravamoils.onrender.com/getOrder", {
 
     }).then((res) => {
 
@@ -21,7 +21,7 @@ export default function Order() {
         if (window.confirm("Do you want update the product") == true) {
             console.log(id);
             console.log(status);
-            await Axios.put(`http://localhost:8080/updatestatus/${id}`, { status: status });
+            await Axios.put(`https://srisaravamoils.onrender.com/updatestatus/${id}`, { status: status });
         }
 
     }
@@ -30,7 +30,7 @@ export default function Order() {
         if (window.confirm("Do you want to delete the product") == true) {
             // alert("Do you want to delete the prod uct");
             console.log(id);
-            await Axios.delete(`http://localhost:8080/deletestat/${id}`);
+            await Axios.delete(`https://srisaravamoils.onrender.com/deletestat/${id}`);
         }
     }
     const Body = order.map((val, key) => {

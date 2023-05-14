@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/form.css";
 import Axios from "axios";
 import AdminNav from "./Admin/AdminNav";
-const url = "http://localhost:8080/uploads";
+const url = "https://srisaravamoils.onrender.com/uploads";
 function Form() {
   const [name, setName] = useState("");
   const [liter, setLiter] = useState("");

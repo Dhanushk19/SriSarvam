@@ -15,11 +15,11 @@ export default function BuyForm(props){
        
         
         e.preventDefault();
-        await Axios.post("http://localhost:8080/buyprod",
+        await Axios.post("https://srisaravamoils.onrender.com/buyprod",
         {
             name:name,
-            email,email,
-            contactno,contactno,
+            email:email,
+            contactno:contactno,
             address:address,
             city:city,
             pincode:pincode,

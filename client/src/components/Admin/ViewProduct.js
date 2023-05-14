@@ -10,7 +10,7 @@ function ViewProduct() {
     const [sell, setSell] = useState([]);
     const [price, setPrice] = useState("");
 
-    Axios.get("http://localhost:8080/postItem", {
+    Axios.get("https://srisaravamoils.onrender.com/postItem", {
     }).then((res) => {
         const data = res.data
         setSell(data);
@@ -20,7 +20,7 @@ function ViewProduct() {
         if (window.confirm("Do you want to delete the product") == true) {
         // alert("Do you want to delete the prod uct");
         console.log(id);
-        await Axios.delete(`http://localhost:8080/deleteprod/${id}`);
+        await Axios.delete(`https://srisaravamoils.onrender.com/deleteprod/${id}`);
         }
     }
     const handleUpdate = async (e, id) => {
@@ -28,7 +28,7 @@ function ViewProduct() {
         if (window.confirm("Do you want update the product") == true) {
             console.log(id);
             console.log(price);
-            await Axios.put(`http://localhost:8080/update/${id}`,{price:price});
+            await Axios.put(`https://srisaravamoils.onrender.com/update/${id}`,{price:price});
         }
 
     }

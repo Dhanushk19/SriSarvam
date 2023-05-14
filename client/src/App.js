@@ -5,9 +5,9 @@ import Home from "../src/components/Home";
 import Products from "./components/Products";
 import Contact from "../src/components/Contact";
 import About from "../src/components/About";
-import Login from "../src/components/Login";
+
 import NoPage from "../src/components/NoPage";
-import SignUp from "../src/components/Signup.js";
+
 import Cart from './components/Cart';
 import Form from "./components/Form";
 import "./index.css";
@@ -78,8 +78,6 @@ function App() {
           <Route path="products" element={<Products  handleAddProduct={handleAddProduct}/>} loading />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
-          <Route path="login" element={<Login/>} />
-          <Route path="signup" element={<SignUp/>} />
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
           <Route path="*" element={<NoPage />} />
           <Route path="buyform" element={<BuyForm cartItems={cartItems}/>}/>

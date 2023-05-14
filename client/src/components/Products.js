@@ -11,7 +11,7 @@ function Products(props){
     const [sell, setSell] = useState([]);
 
 
-    Axios.get("http://localhost:8080/postItem", {
+    Axios.get("https://srisaravamoils.onrender.com/postItem", {
 
     }).then((res) => {
          
