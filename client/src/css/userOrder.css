@@ -1,10 +1,10 @@
-.ss__control
+.ss__control1
 {
     margin-left: 40%;
     
 }
 
-.ss__control_button
+.ss__control1_button
 {
     margin-top: 2%;
 }
@@ -16,13 +16,13 @@
 
 
 @media(max-width:767px) {
-    .ss__control
+    .ss__control1
 {
     margin-left: 0%;
     
 }
 
-.ss__control_button
+.ss__control1_button
 {
     margin-top: 2%;
 }

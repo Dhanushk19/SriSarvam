@@ -44,11 +44,11 @@ function Userorder() {
             <h4 className="Products"> Orders</h4>
             
             <form onSubmit={e => getProd(e)}>
-                <div className="ss__control">
+                <div className="ss__control1">
                     <h5 className="title6">Enter your email Id</h5>
                     <label for="emailid">Email</label>
                     <input type="email" name="email" placeholder="Enter Email" className="form-control" id="emailid" onChange={(event) => { setEmail(event.target.value) }} />
-                    <button type="submit" className="btn btn-primary  ss__control_button">Submit</button>
+                    <button type="submit" className="btn btn-primary  ss__control1_button">Submit</button>
                 </div>
             </form>
             {

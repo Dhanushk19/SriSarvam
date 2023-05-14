@@ -29,7 +29,7 @@
 .card5 {
     padding-top: 3%;
     width: 100vh;
-    height: 250px;
+    height: 340px;
     border: 1px solid black;
     border-radius: 5px;
     overflow: hidden;
@@ -60,7 +60,7 @@
     }
     .card5 {
         width: fit-content;
-        height: 250px;
+        height: 380px;
         border: 1px solid black;
         border-radius: 5px;
         overflow: hidden;

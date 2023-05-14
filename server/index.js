@@ -4,7 +4,7 @@ const app = express();
 const { Prod, BuyProd } = require('./model/prodserv.js');
 const cors = require('cors');
 const connection = require('./config/db.js');
-const { UserSignup, UserLogin, AdminInfo, DeleteProduct } = require('./controller/prod.js')
+const { UserSignup, UserLogin, AdminInfo, DeleteProduct ,DeleteStatus} = require('./controller/prod.js')
 const myParser = require("body-parser");
 app.use(myParser.json({ limit: '200mb' }));
 app.use(myParser.urlencoded({ limit: '200mb', extended: true }));
@@ -60,11 +60,29 @@ app.put('/update/:id', async (req, res) => {
     }
 });
 
+app.put('/updatestatus/:id', async (req, res) => {
+    try {
+        let id = req.params.id;
+        await BuyProd.findByIdAndUpdate(id, req.body);
+        console.log(req.body);
+        res.status(200).json(
+            {
+                msg: 'Updated'
+            }
+        )
+    }
+    catch (err) {
+        return res.status(500).json({
+            msg: 'Server interval error'
+        })
+    }
+});
 
 app.post('/register', UserSignup);
 app.post('/login-user', UserLogin);
 app.post('/adminLogin', AdminInfo);
 app.delete('/deleteprod/:id', DeleteProduct);
+app.delete('/deletestat/:id', DeleteStatus);
 app.get("/postItem", async (req, res) => {
     Prod.find({}).then(function (result) {
 

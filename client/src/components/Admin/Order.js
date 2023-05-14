@@ -4,6 +4,7 @@ import Axios from "axios";
 import "../../css/order.css";
 export default function Order(){
     const [order,setOrder] =useState([]);
+    const [status,setStatus] = useState("");
     
     Axios.get("http://localhost:8080/getOrder", {
 
@@ -15,6 +16,23 @@ export default function Order(){
 
 
 });
+const handleUpdate = async (e, id) => {
+    e.preventDefault()
+    if (window.confirm("Do you want update the product") == true) {
+        console.log(id);
+        console.log(status);
+        await Axios.put(`http://localhost:8080/updatestatus/${id}`,{status:status});
+    }
+
+}
+const handleDelete = async (e, id) => {
+    e.preventDefault()
+    if (window.confirm("Do you want to delete the product") == true) {
+    // alert("Do you want to delete the prod uct");
+    console.log(id);
+    await Axios.delete(`http://localhost:8080/deletestat/${id}`);
+    }
+}
 const Body = order.map((val, key) => {
     return (
         <div className="allproducts1">
@@ -26,7 +44,19 @@ const Body = order.map((val, key) => {
                 <h5 className="product-name"><b>City :</b> {val.city}</h5>
                 <h5 className="product-name"><b>Pincode :</b> {val.pincode}</h5>
                 <h5 className="product-name"><b>Status :</b> {val.status}</h5>
+                <form class="form-inline"   >
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="price" placeholder="Update Status" onChange={(e) => { setStatus(e.target.value) }} />
+                        </div>
+                    </form>
+                    <div>
+            <button className="product-add-buttons" onClick={(e) => handleUpdate(e, val._id)}>Update</button>
+                        <button className="product-add-buttonss" onClick={(e) => handleDelete(e, val._id)}>Delete</button>
             </div>
+            </div>
+            
+
+            
             <div>
             </div>
         </div>
