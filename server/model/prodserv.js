@@ -20,7 +20,7 @@ const AddProdSchema = new mongoose.Schema(
         city:String,
         pincode:String,
         status:String ,
-        pid:String,
+        item:Object,
       })
   
       module.exports.BuyProd = mongoose.model('buyprods',BuyProdSchema);

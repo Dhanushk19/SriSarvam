@@ -8,8 +8,8 @@ export default function BuyForm(props){
     const [city,setCity] = useState("");
     const [pincode,setPincode] = useState("");
     const status="pending";
-    const pid=props.pids;
-    console.log("product id in buyform",pid);
+    const items = props.cartItems;
+   
     const create=async (e)=>
     {
        
@@ -24,7 +24,7 @@ export default function BuyForm(props){
             city:city,
             pincode:pincode,
             status:status,
-            pid:pid,
+            item:items,
         })
         alert("product submited successfully");
 

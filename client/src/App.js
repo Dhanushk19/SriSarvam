@@ -23,7 +23,7 @@ import Userorder  from "./components/userorder";
 function App() {
   
   const [cartItems,setCartItems]=useState([]);
-  const [pids,setPids]=useState([0]);
+  const [final,setFinal]=useState([]);
   const handleAddProduct=(product)=>{
     alert("Product is add to the cart");
     const ProductExist=cartItems.find((item)=>item._id===product._id);
@@ -39,7 +39,7 @@ function App() {
     }else{
         setCartItems([...cartItems,{ ...product,quantity:1}]);
       }
-      console.log("product id in app page",pids);
+      
     };
 
     const handleRemoveProduct=(product)=>{
@@ -57,7 +57,10 @@ function App() {
       }
     }
 
+    
+
     const handleCartClearance=()=>{
+      
       setCartItems([]);
     }
     
@@ -79,7 +82,7 @@ function App() {
           <Route path="signup" element={<SignUp/>} />
           <Route path="cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearance={handleCartClearance}/>}/>
           <Route path="*" element={<NoPage />} />
-          <Route path="buyform" element={<BuyForm pids={pids}/>}/>
+          <Route path="buyform" element={<BuyForm cartItems={cartItems}/>}/>
           <Route path="userorder" element={<Userorder/>}/>
         </Route>
           <Route path="form" element={<ProtectedRoute><Form/></ProtectedRoute>} />
