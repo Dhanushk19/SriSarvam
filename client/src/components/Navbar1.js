@@ -87,7 +87,7 @@ function Header(props) {
                                     <i class="fa-solid fa-circle-info"></i> <NavLink to="/about">About</NavLink>
                                     </div>
                                     <div class="modal-line">
-                                    <i class="fas fa-cart"></i> <NavLink to="/cart">Cart</NavLink>
+                                    <i class="fas fa-shopping-cart"></i> <NavLink to="/cart">Cart</NavLink>
                                     </div>
                                     
 
