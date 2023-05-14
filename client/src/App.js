@@ -28,11 +28,11 @@ function App() {
     alert("Product is add to the cart");
     const ProductExist=cartItems.find((item)=>item._id===product._id);
     console.log("product id",product._id,ProductExist);
-    setPids(product._id);
+    // setPids(product._id);
     if(ProductExist){
       setCartItems(
         cartItems.map((item)=>
-        item.id===product.id
+        item._id===product._id
           ?{ ...ProductExist, quantity:ProductExist.quantity+1}:item)
       );
       

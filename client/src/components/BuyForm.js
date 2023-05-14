@@ -26,6 +26,8 @@ export default function BuyForm(props){
             status:status,
             pid:pid,
         })
+        alert("product submited successfully");
+
     }
     return(
         <>
