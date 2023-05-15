@@ -67,11 +67,11 @@ export default function AdminNav(){
                                     </div>
 
                                     <div class="modal-line">
-                                    <i class="fa-solid fa-droplet"></i> <a href="/viewproducts">View Products</a>
+                                    <i class="fa-solid fa-droplet"></i> <a href="/viewproduct">View Products</a>
                                     </div>
 
                                     <div class="modal-line">
-                                    <i class="fa-solid fa-phone"></i> <a href="/orders">Orders</a>
+                                    <i class="fa-solid fa-phone"></i> <a href="/order">Orders</a>
                                     </div>
 
                                     
