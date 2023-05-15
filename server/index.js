@@ -123,10 +123,11 @@ app.get("/getOrder", async (req, res) => {
     })
 })
 
-app.get("/getuserOrder", async (req, res) => {
+app.post("/getuserOrder", async (req, res) => {
     const email = req.body.email;
+    console.log(email);
     try {
-        const details = await BuyProd.find({ Email:email });
+        const details = await BuyProd.find({ email:email });
         res.json(details);
         console.log(details);
         res.end()
