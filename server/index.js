@@ -24,12 +24,14 @@ app.post("/uploads", async (req, res) => {
         const liter = req.body.liter
         const price = req.body.price
         const image = req.body.image
+        const stocks = req.body.stocks
 
 
         const shop = new Prod({
             name: req.body.name,
             liter: req.body.liter,
             price: req.body.price,
+            stocks: req.body.stocks,
             image: req.body.image
         });
 
@@ -59,6 +61,8 @@ app.put('/update/:id', async (req, res) => {
         })
     }
 });
+
+
 
 app.put('/updatestatus/:id', async (req, res) => {
     try {

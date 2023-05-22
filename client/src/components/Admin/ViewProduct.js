@@ -9,6 +9,7 @@ import PreLoader from "../PreLoader";
 function ViewProduct() {
     const [sell, setSell] = useState([]);
     const [price, setPrice] = useState("");
+    const [stocks,setStocks] = useState("");
 
     Axios.get("https://srisaravamoils.onrender.com/postItem", {
     }).then((res) => {
@@ -25,13 +26,23 @@ function ViewProduct() {
     }
     const handleUpdate = async (e, id) => {
         e.preventDefault()
-        if (window.confirm("Do you want update the product") === true) {
+        if (window.confirm("Do you want update the product") === true ) {
             console.log(id);
             console.log(price);
-            await Axios.put(`https://srisaravamoils.onrender.com/update/${id}`,{price:price});
+            console.log(stocks);
+            if(stocks!=="")
+            {
+                await Axios.put(`https://srisaravamoils.onrender.com/update/${id}`,{stocks:stocks});
+            }
+            else if(price!==""){
+                await Axios.put(`https://srisaravamoils.onrender.com/update/${id}`,{price:price});
+            }
+            
         }
 
     }
+    
+   
 
 
     const Body = sell.map((val, key) => {
@@ -44,16 +55,22 @@ function ViewProduct() {
                     <hr></hr>
                     <h5 className="product-name"><b>Name :</b> {val.name}</h5>
                     <h5 className="product-name"><b>Price :</b>Rs. {val.price}</h5>
-                    <h5 className="product-name"><b>Liter :</b> {val.liter}</h5>
+                    <h5 className="product-name"><b>Liter :</b> {val.liter}</h5>                    
+                    <h5 className="product-name"><b>Stocks :</b> {val.stocks}</h5>
+
+                    
                     <form class="form-inline"   >
                         <div class="form-group">
-                            <input type="text" class="form-control" id="price" placeholder="Enter New Price" onChange={(e) => { setPrice(e.target.value) }} />
+                            <input type="text" class="form-control" id="price" placeholder="Enter New Price" style={{marginTop:"5px",marginBottom:"5px"}} onChange={(e) => { setPrice(e.target.value) }} required/>
+                            <input type="text" class="form-control" id="stock" placeholder="Enter New Stock" onChange={(e) => { setStocks(e.target.value) }} required/>
                         </div>
                     </form>
                     <div className="update-delete-button">
                         <button className="product-add-buttons" onClick={(e) => handleUpdate(e, val._id)}>Update</button>
                         <button className="product-add-buttonss" onClick={(e) => handleDelete(e, val._id)}>Delete</button>
                     </div>
+                    
+                    
                 </div>
                 <div>
 

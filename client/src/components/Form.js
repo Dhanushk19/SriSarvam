@@ -7,7 +7,8 @@ function Form() {
   const [name, setName] = useState("");
   const [liter, setLiter] = useState("");
   const [price, setPrice] = useState("");
-  const [imageUrl, setImageurl] = useState("")
+  const [imageUrl, setImageurl] = useState("");
+  const [stocks,setStocks] = useState("");
   const uploadImage = async () => {
     const files = await document.getElementById("file-upload").files;
     console.log(files);
@@ -38,6 +39,7 @@ function Form() {
       name: name,
       liter: liter,
       price: price,
+      stocks:stocks,
       image: imageUrl,
     })
   };
@@ -60,6 +62,10 @@ function Form() {
                 <div className="mb-3 mt-3  ss__control">
                 <label for="price">Price:</label>
                 <input type="number" className="form-control" id="price" placeholder="Enter price" name="price" value={price} onChange={(e)=>{setPrice(e.target.value)}}/>
+                </div>
+                <div className="mb-3 mt-3  ss__control">
+                <label for="price">Stocks:</label>
+                <input type="text" className="form-control" id="stocks" placeholder="Enter stocks" name="stocks" value={stocks} onChange={(e)=>{setStocks(e.target.value)}}/>
                 </div>
                 <div className="mb-3 mt-3  ss__control">
                 <label for="image">Image:</label>

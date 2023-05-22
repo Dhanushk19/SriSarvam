@@ -51,7 +51,9 @@ export default function Order() {
                         </div></h6>
                     })}
                     </div>
+                    
                     </h5>
+                    
                     <form class="form-inline"   >
                         <div class="form-group">
                             <input type="text" class="form-control" id="price" placeholder="Update Status" onChange={(e) => { setStatus(e.target.value) }} />

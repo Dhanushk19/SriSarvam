@@ -25,13 +25,14 @@ function Products(props){
 
         return (
             
-            <div className="allproducts">
-                <div className="card" key={key} >
+            <div className="allproducts2">
+                <div className="card allvalues" key={key} >
                 <img src={val.image} alt="petp" width="80%" height="130%" ></img> 
                     <hr></hr>
                     <h5 className="product-name"><b>Name :</b> {val.name}</h5>
                     <h5 className="product-name"><b>Price :</b>Rs. {val.price}</h5>
                     <h5 className="product-name"><b>Liter :</b> {val.liter}</h5>
+                    <h5 className="product-name"><b>Stocks :</b> {val.stocks}</h5>
                     <button className="product-add-button" onClick={()=>props.handleAddProduct(val)}>Add to Cart</button>
                 </div>
                 <div>

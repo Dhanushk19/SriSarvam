@@ -5,6 +5,7 @@ const AddProdSchema = new mongoose.Schema(
     name:String,
     price:Number,
     liter:String,
+    stocks:String,
     image:String,
    
     })

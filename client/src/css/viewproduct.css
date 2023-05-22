@@ -36,7 +36,7 @@
 
 .card {
     width: 280px;
-    height: 570px;
+    height: 680px;
     border: 1px solid black;
     border-radius: 5px;
     overflow: hidden;
@@ -103,4 +103,14 @@
 }
 .product-add-buttonss:hover{
     background-color: #29065e;
+}
+.allproducts
+    {
+        margin-top: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+    }
+.allproducts img {
+    margin-left: 7%;
 }
